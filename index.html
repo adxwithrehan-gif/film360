@@ -1,0 +1,3168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film360 - Large Catalogue</title>
+    <style>
+        body { background-color: #141414; color: white; font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        h1 { color: #E50914; margin-bottom: 20px; font-size: 32px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
+        .card { background: #222; border-radius: 6px; overflow: hidden; cursor: pointer; transition: transform 0.2s; }
+        .card:hover { transform: scale(1.05); }
+        .card img { width: 100%; height: 240px; object-fit: cover; }
+        .card-info { padding: 10px; font-size: 13px; text-align: center; }
+        .badge { background: #E50914; font-size: 9px; padding: 2px 5px; border-radius: 3px; font-weight: bold; }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
+        .modal-content { position: relative; margin: 5% auto; width: 90%; max-width: 850px; }
+        .close { position: absolute; right: -15px; top: -35px; color: white; font-size: 35px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>FILM360 (390 Items)</h1>
+    <div class="grid">
+
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt22084616')">
+            <img src="https://image.tmdb.org/t/p/w500/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg" alt="Spider-Man: Brand New Day">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Spider-Man: Brand New Day</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt33764258')">
+            <img src="https://image.tmdb.org/t/p/w500/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg" alt="The Odyssey">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Odyssey</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32338669')">
+            <img src="https://image.tmdb.org/t/p/w500/pu2VxGlpGwffOx292w18b1tv96j.jpg" alt="Mutiny">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Mutiny</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1756855')">
+            <img src="https://image.tmdb.org/t/p/w500/orkLtdgMGiO9rTVMqJ1kKwrnup1.jpg" alt="Coyote vs. Acme">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Coyote vs. Acme</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt33349025')">
+            <img src="https://image.tmdb.org/t/p/w500/3r0O6BW9USoZ9mteCVyNKMQriRL.jpg" alt="Shape of My Heart">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Shape of My Heart</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt34564059')">
+            <img src="https://image.tmdb.org/t/p/w500/uxCaBoYXsDC4A0SqTm3SISj0OwK.jpg" alt="The Runner">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Runner</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt34385135')">
+            <img src="https://image.tmdb.org/t/p/w500/tN799oUR0f1gUKDYdMNrDaY7I51.jpg" alt="Colony">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Colony</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt37654096')">
+            <img src="https://image.tmdb.org/t/p/w500/3PWJqDfygN0YNNjWsDUOXclCp3h.jpg" alt="The Last Sunrise">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Last Sunrise</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt37287335')">
+            <img src="https://image.tmdb.org/t/p/w500/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg" alt="Obsession">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Obsession</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt27530512')">
+            <img src="https://image.tmdb.org/t/p/w500/oiIPU4lvnI0Ag2K9cyAi44eCaoE.jpg" alt="Toxic: A Fairy Tale for Grown-ups">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Toxic: A Fairy Tale for Grown-ups</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt39390497')">
+            <img src="https://image.tmdb.org/t/p/w500/z8eF0ACFFKtIZ4pUeo02PCzxRVO.jpg" alt="Facing El Chapo">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Facing El Chapo</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt11561116')">
+            <img src="https://image.tmdb.org/t/p/w500/6UqflU8Qqkz7Dq4swJPqs0ZJjY4.jpg" alt="The Whisper Man">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Whisper Man</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt9000310')">
+            <img src="https://image.tmdb.org/t/p/w500/zxcMdx0w5Zmg8yZuuiS7CJ8vOea.jpg" alt="Ghost in the Cell">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Ghost in the Cell</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt29355505')">
+            <img src="https://image.tmdb.org/t/p/w500/9VWplgfRcYkUao9QGQXUP3rWQK7.jpg" alt="Toy Story 5">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Toy Story 5</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt29512655')">
+            <img src="https://image.tmdb.org/t/p/w500/oLld47ZT1I3iecM3OWhIphohQUJ.jpg" alt="Rage of Stars">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Rage of Stars</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt37603783')">
+            <img src="https://image.tmdb.org/t/p/w500/7bOuu1SRALGwsG2fLCTvRkCmQBj.jpg" alt="Above & Below">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Above & Below</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32890033')">
+            <img src="https://image.tmdb.org/t/p/w500/4LwvU9SZc8QQzW1X1FAPhNbXnEU.jpg" alt="Minions & Monsters">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Minions & Monsters</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt30887701')">
+            <img src="https://image.tmdb.org/t/p/w500/eUJXk3bTvLBi5Zcb0BCedZU7lVL.jpg" alt="Pinocchio: Unstrung">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Pinocchio: Unstrung</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt27419466')">
+            <img src="https://image.tmdb.org/t/p/w500/zKVgiv5qHCvCLT4A2ymJi5QeXDH.jpg" alt="Moana">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Moana</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32333324')">
+            <img src="https://image.tmdb.org/t/p/w500/360qdtu2hLnqMu8SVHMywn420w1.jpg" alt="Batman: Knightfall Part 1: Knightfall">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Batman: Knightfall Part 1: Knightfall</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt27844906')">
+            <img src="https://image.tmdb.org/t/p/w500/rsHEVjzxU8cxz1sm3vboj99daNv.jpg" alt="Rosebush Pruning">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Rosebush Pruning</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt28014327')">
+            <img src="https://image.tmdb.org/t/p/w500/hVXjX1jLZ1ljFSNGXpjJfbTUOa7.jpg" alt="Mayday">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Mayday</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0111161')">
+            <img src="https://image.tmdb.org/t/p/w500/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg" alt="The Shawshank Redemption">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Shawshank Redemption</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt12042730')">
+            <img src="https://image.tmdb.org/t/p/w500/yihdXomYb5kTeSivtFndMy5iDmf.jpg" alt="Project Hail Mary">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Project Hail Mary</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt26657236')">
+            <img src="https://image.tmdb.org/t/p/w500/rhGx6E3qRNMgj3i5su2oukNHwIQ.jpg" alt="Backrooms">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Backrooms</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt10872600')">
+            <img src="https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" alt="Spider-Man: No Way Home">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Spider-Man: No Way Home</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt15047880')">
+            <img src="https://image.tmdb.org/t/p/w500/AnJ8IQJI23hNpYXVNaythu061Ru.jpg" alt="Disclosure Day">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Disclosure Day</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt21285562')">
+            <img src="https://image.tmdb.org/t/p/w500/5O616X9vmRzQdB68PHzBewPittd.jpg" alt="The Dog Stars">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Dog Stars</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32273171')">
+            <img src="https://image.tmdb.org/t/p/w500/13MmRwmG5NmaMfU8qNrtgGXisiD.jpg" alt="The Death of Robin Hood">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Death of Robin Hood</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt31192372')">
+            <img src="https://image.tmdb.org/t/p/w500/sY65bOZcjQqO6VdpOXLN5VcW61e.jpg" alt="Fall 2: Deadpoint">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Fall 2: Deadpoint</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32093575')">
+            <img src="https://image.tmdb.org/t/p/w500/znHT8peERZRWG1ME3r0Db0EV8k8.jpg" alt="Scary Movie">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Scary Movie</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt29544916')">
+            <img src="https://image.tmdb.org/t/p/w500/989voQxc9qAJKuBaoBHngqnpLsD.jpg" alt="OBEX">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">OBEX</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt13186306')">
+            <img src="https://image.tmdb.org/t/p/w500/yvirUYrva23IudARHn3mMGVxWqM.jpg" alt="War of the Worlds">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">War of the Worlds</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt8814476')">
+            <img src="https://image.tmdb.org/t/p/w500/uhzRnTW4DM13UQBvZP3eVNzQTuz.jpg" alt="Supergirl">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Supergirl</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt29719182')">
+            <img src="https://image.tmdb.org/t/p/w500/yQ3GeVsebrhOPIBhIdoSslbndEv.jpg" alt="Bury the Devil">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Bury the Devil</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt18259538')">
+            <img src="https://image.tmdb.org/t/p/w500/3sgnSfNT27Bx5O5ukr7B26mhEQq.jpg" alt="Avatar Aang: The Last Airbender">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Avatar Aang: The Last Airbender</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt4154756')">
+            <img src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg" alt="Avengers: Infinity War">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Avengers: Infinity War</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0848228')">
+            <img src="https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg" alt="The Avengers">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Avengers</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt30825738')">
+            <img src="https://image.tmdb.org/t/p/w500/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg" alt="The Mandalorian and Grogu">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Mandalorian and Grogu</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt34224947')">
+            <img src="https://image.tmdb.org/t/p/w500/9fbZdiOI9fRinl44mNm3CYgEtYR.jpg" alt="Animals">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Animals</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32820897')">
+            <img src="https://image.tmdb.org/t/p/w500/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg" alt="Demon Slayer: Kimetsu no Yaiba Infinity Castle">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Demon Slayer: Kimetsu no Yaiba Infinity Castle</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt37275992')">
+            <img src="https://image.tmdb.org/t/p/w500/5FC5vUHFz0fbJOd0bhyzJpCSLrc.jpg" alt="The Secret Woman">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Secret Woman</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt29516222')">
+            <img src="https://image.tmdb.org/t/p/w500/ZWHxL2ETItcZzeVsVfs6gv3SZ7.jpg" alt="Deep Water">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Deep Water</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt19035928')">
+            <img src="https://image.tmdb.org/t/p/w500/7AEBdyGYXumXWmMFeynE8227KeZ.jpg" alt="Lucky Strike">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Lucky Strike</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt26443597')">
+            <img src="https://image.tmdb.org/t/p/w500/oJ7g2CifqpStmoYQyaLQgEU32qO.jpg" alt="Zootopia 2">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Zootopia 2</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2080323')">
+            <img src="https://image.tmdb.org/t/p/w500/47XRWH95ATv4szxdWHl723guWXP.jpg" alt="Hotel Desire">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Hotel Desire</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt36948232')">
+            <img src="https://image.tmdb.org/t/p/w500/glALx6QaIgw1u4joXsnfHTjWi6D.jpg" alt="Just Play Dead">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Just Play Dead</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32268156')">
+            <img src="https://image.tmdb.org/t/p/w500/6JU7E8Vv2M11egkctWVOScxWR75.jpg" alt="The Last House">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Last House</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1757678')">
+            <img src="https://image.tmdb.org/t/p/w500/bRBeSHfGHwkEpImlhxPmOcUsaeg.jpg" alt="Avatar: Fire and Ash">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Avatar: Fire and Ash</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt41605854')">
+            <img src="https://image.tmdb.org/t/p/w500/b0z3ViIC5AkbJoqxmTpqyjgmoJs.jpg" alt="The Odyssey">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Odyssey</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0427340')">
+            <img src="https://image.tmdb.org/t/p/w500/oRuyGUHdoaQxWP3SDfafGkStxTC.jpg" alt="Masters of the Universe">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Masters of the Universe</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt31170389')">
+            <img src="https://image.tmdb.org/t/p/w500/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg" alt="Evil Dead Burn">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Evil Dead Burn</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt33354945')">
+            <img src="https://image.tmdb.org/t/p/w500/aF3IhwS1mrVfvM9OMXmTaXAT0l8.jpg" alt="Gandhari">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Gandhari</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt33612209')">
+            <img src="https://image.tmdb.org/t/p/w500/xTI42pmsP5EDnvsNJPEDubwWBQO.jpg" alt="The Devil Wears Prada 2">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Devil Wears Prada 2</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0068986')">
+            <img src="https://image.tmdb.org/t/p/w500/1WGq9cMuj09tnTJ5wdkINOJff04.jpg" alt="Loves of a French Pussycat">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Loves of a French Pussycat</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt28650488')">
+            <img src="https://image.tmdb.org/t/p/w500/eJGWx219ZcEMVQJhAgMiqo8tYY.jpg" alt="The Super Mario Galaxy Movie">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Super Mario Galaxy Movie</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt27165187')">
+            <img src="https://image.tmdb.org/t/p/w500/fYXqpgPmHMphSF2W30GbTeJVIa5.jpg" alt="The End of Oak Street">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The End of Oak Street</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0816692')">
+            <img src="https://image.tmdb.org/t/p/w500/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg" alt="Interstellar">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Interstellar</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt34610311')">
+            <img src="https://image.tmdb.org/t/p/w500/cHKo3m8N1fwvEy2ZEr0xGmmMODV.jpg" alt="The Shadow's Edge">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Shadow's Edge</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt11378946')">
+            <img src="https://image.tmdb.org/t/p/w500/dueFqKLvjftnELZaGYwY7xinfaI.jpg" alt="Michael">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Michael</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0068646')">
+            <img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" alt="The Godfather">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Godfather</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2080323')">
+            <img src="https://image.tmdb.org/t/p/w500/47XRWH95ATv4szxdWHl723guWXP.jpg" alt="Hotel Desire">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Hotel Desire</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt31170389')">
+            <img src="https://image.tmdb.org/t/p/w500/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg" alt="Evil Dead Burn">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Evil Dead Burn</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0468569')">
+            <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="The Dark Knight">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Dark Knight</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt15398776')">
+            <img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" alt="Oppenheimer">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Oppenheimer</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt11378946')">
+            <img src="https://image.tmdb.org/t/p/w500/dueFqKLvjftnELZaGYwY7xinfaI.jpg" alt="Michael">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Michael</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32332915')">
+            <img src="https://image.tmdb.org/t/p/w500/pR7SIX3AwqdoD96OI44oLG98e7g.jpg" alt="I Want Your Sex">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">I Want Your Sex</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0145487')">
+            <img src="https://image.tmdb.org/t/p/w500/or6XJBVpcEbIkma0V9zshnbEtx4.jpg" alt="Spider-Man">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Spider-Man</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32393988')">
+            <img src="https://image.tmdb.org/t/p/w500/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg" alt="Insidious: Out of the Further">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Insidious: Out of the Further</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt6263850')">
+            <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool & Wolverine">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Deadpool & Wolverine</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt4154796')">
+            <img src="https://image.tmdb.org/t/p/w500/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg" alt="Avengers: Endgame">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Avengers: Endgame</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2012616')">
+            <img src="https://image.tmdb.org/t/p/w500/dx2dblJL3GAKcXXXPjC2FSaMTWW.jpg" alt="Motor City">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Motor City</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0114709')">
+            <img src="https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg" alt="Toy Story">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Toy Story</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1375666')">
+            <img src="https://image.tmdb.org/t/p/w500/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg" alt="Inception">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Inception</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0241527')">
+            <img src="https://image.tmdb.org/t/p/w500/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg" alt="Harry Potter and the Philosopher's Stone">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Harry Potter and the Philosopher's Stone</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt14513804')">
+            <img src="https://image.tmdb.org/t/p/w500/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg" alt="Captain America: Brave New World">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Captain America: Brave New World</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt3242418')">
+            <img src="https://image.tmdb.org/t/p/w500/l8st7M90EBpGz5CpL12SFvswc56.jpg" alt="Being 14">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Being 14</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32357218')">
+            <img src="https://image.tmdb.org/t/p/w500/cv7DeQQ7TOozPoTCBdNJIvWKhU1.jpg" alt="Shelter">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Shelter</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt36042156')">
+            <img src="https://image.tmdb.org/t/p/w500/qQclTgLMDvGBuUBFGHRipxkEwWR.jpg" alt="The Punisher: One Last Kill">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Punisher: One Last Kill</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt14513804')">
+            <img src="https://image.tmdb.org/t/p/w500/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg" alt="Captain America: Brave New World">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Captain America: Brave New World</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt6237208')">
+            <img src="https://image.tmdb.org/t/p/w500/7o7qmymPy1D9mASODsrOHq41Fye.jpg" alt="From Straight A's to XXX">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">From Straight A's to XXX</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32357218')">
+            <img src="https://image.tmdb.org/t/p/w500/cv7DeQQ7TOozPoTCBdNJIvWKhU1.jpg" alt="Shelter">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Shelter</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt43679852')">
+            <img src="https://image.tmdb.org/t/p/w500/x3HEvYXWOW6WHqsHmg2MUVy3SLm.jpg" alt="LEGO Star Wars: The Mandalorian">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">LEGO Star Wars: The Mandalorian</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt33311069')">
+            <img src="https://image.tmdb.org/t/p/w500/zP19YO60jwEsfKd5Qf1UvA5uJu8.jpg" alt="The Furious">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Furious</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2250912')">
+            <img src="https://image.tmdb.org/t/p/w500/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg" alt="Spider-Man: Homecoming">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Spider-Man: Homecoming</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2395427')">
+            <img src="https://image.tmdb.org/t/p/w500/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg" alt="Avengers: Age of Ultron">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Avengers: Age of Ultron</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt42764234')">
+            <img src="https://image.tmdb.org/t/p/w500/drDsk2ES8YvWFwgWaY9foKaE5xv.jpg" alt="Hibla 2">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Hibla 2</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt15398776')">
+            <img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" alt="Oppenheimer">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Oppenheimer</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt37281055')">
+            <img src="https://image.tmdb.org/t/p/w500/6Lh4ZlsAISFQFVfLZ90sE9ycVnN.jpg" alt="Buddy">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Buddy</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt19838566')">
+            <img src="https://image.tmdb.org/t/p/w500/xdZ8k5s8DTwWyPBMIcflrYLgcAK.jpg" alt="Kraken">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Kraken</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt26443616')">
+            <img src="https://image.tmdb.org/t/p/w500/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg" alt="Hoppers">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Hoppers</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt14173636')">
+            <img src="https://image.tmdb.org/t/p/w500/b7Dr8Chzse8VagexAporUu2RtLx.jpg" alt="The Invite">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Invite</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt37752275')">
+            <img src="https://image.tmdb.org/t/p/w500/16oqRrWVzQm6qdGfBxvziZ2UiMT.jpg" alt="Clash of the Thundermans">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Clash of the Thundermans</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0137523')">
+            <img src="https://image.tmdb.org/t/p/w500/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg" alt="Fight Club">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Fight Club</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt43706402')">
+            <img src="https://image.tmdb.org/t/p/w500/hnr0QkZSDLlrJTvU2ecco65wcHo.jpg" alt="Barreda">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Barreda</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt10676052')">
+            <img src="https://image.tmdb.org/t/p/w500/nf5qaSEvyYSNeFH0YhSs5EsBLX9.jpg" alt="The Fantastic 4: First Steps">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Fantastic 4: First Steps</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0133093')">
+            <img src="https://image.tmdb.org/t/p/w500/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg" alt="The Matrix">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Matrix</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt17490712')">
+            <img src="https://image.tmdb.org/t/p/w500/hwRdDFIhaEmpRgoki805YvyyjZf.jpg" alt="Mortal Kombat II">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Mortal Kombat II</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1591095')">
+            <img src="https://image.tmdb.org/t/p/w500/1egpmVXuXed58TH2UOnX1nATTrf.jpg" alt="Insidious">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Insidious</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt4633694')">
+            <img src="https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" alt="Spider-Man: Into the Spider-Verse">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Spider-Man: Into the Spider-Verse</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0167260')">
+            <img src="https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg" alt="The Lord of the Rings: The Return of the King">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Lord of the Rings: The Return of the King</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32565993')">
+            <img src="https://image.tmdb.org/t/p/w500/iKy5460GdsoknM8ppmGlJbKxAKa.jpg" alt="The Sheep Detectives">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Sheep Detectives</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0114709')">
+            <img src="https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg" alt="Toy Story">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Toy Story</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0120737')">
+            <img src="https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg" alt="The Lord of the Rings: The Fellowship of the Ring">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Lord of the Rings: The Fellowship of the Ring</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt33311069')">
+            <img src="https://image.tmdb.org/t/p/w500/zP19YO60jwEsfKd5Qf1UvA5uJu8.jpg" alt="The Furious">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Furious</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32654916')">
+            <img src="https://image.tmdb.org/t/p/w500/bNErActDctl6cdUGw9pnjSCmyhQ.jpg" alt="Soulm8te">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Soulm8te</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt6791350')">
+            <img src="https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg" alt="Guardians of the Galaxy Vol. 3">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Guardians of the Galaxy Vol. 3</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt31036941')">
+            <img src="https://image.tmdb.org/t/p/w500/1RICxzeoNCAO5NpcRMIgg1XT6fm.jpg" alt="Jurassic World Rebirth">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Jurassic World Rebirth</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt39143902')">
+            <img src="https://image.tmdb.org/t/p/w500/gnAsZvBygplNpp8PtjoTEYv3VPB.jpg" alt="Leviticus">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Leviticus</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2713180')">
+            <img src="https://image.tmdb.org/t/p/w500/pfte7wdMobMF4CVHuOxyu6oqeeA.jpg" alt="Fury">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Fury</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt14173636')">
+            <img src="https://image.tmdb.org/t/p/w500/b7Dr8Chzse8VagexAporUu2RtLx.jpg" alt="The Invite">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Invite</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1160419')">
+            <img src="https://image.tmdb.org/t/p/w500/v1tRXZ4JtD2Iv6fjkPvT4GiwslV.jpg" alt="Dune">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Dune</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt22526100')">
+            <img src="https://image.tmdb.org/t/p/w500/zUaTMxLOuW4wdaFYhRVJbO6W8Sy.jpg" alt="The Love Hypothesis">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Love Hypothesis</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt35538033')">
+            <img src="https://image.tmdb.org/t/p/w500/qku2uWSoJ9amQV5MWo1Eek29iji.jpg" alt="Resident Evil">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Resident Evil</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0295297')">
+            <img src="https://image.tmdb.org/t/p/w500/sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg" alt="Harry Potter and the Chamber of Secrets">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Harry Potter and the Chamber of Secrets</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt29623480')">
+            <img src="https://image.tmdb.org/t/p/w500/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg" alt="The Wild Robot">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Wild Robot</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt3242418')">
+            <img src="https://image.tmdb.org/t/p/w500/l8st7M90EBpGz5CpL12SFvswc56.jpg" alt="Being 14">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Being 14</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0120338')">
+            <img src="https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg" alt="Titanic">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Titanic</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0109830')">
+            <img src="https://image.tmdb.org/t/p/w500/Cw4hIUIAmSYfK9QfaUW5igp9La.jpg" alt="Forrest Gump">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Forrest Gump</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1877830')">
+            <img src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg" alt="The Batman">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Batman</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt29623480')">
+            <img src="https://image.tmdb.org/t/p/w500/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg" alt="The Wild Robot">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Wild Robot</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt17490712')">
+            <img src="https://image.tmdb.org/t/p/w500/hwRdDFIhaEmpRgoki805YvyyjZf.jpg" alt="Mortal Kombat II">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Mortal Kombat II</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt29552248')">
+            <img src="https://image.tmdb.org/t/p/w500/tHhxWxge06goXU6ZQH1hj7vK8Hd.jpg" alt="Swapped">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Swapped</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2395427')">
+            <img src="https://image.tmdb.org/t/p/w500/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg" alt="Avengers: Age of Ultron">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Avengers: Age of Ultron</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0371746')">
+            <img src="https://image.tmdb.org/t/p/w500/78lPtwv72eTNqFW9COBYI0dWDJa.jpg" alt="Iron Man">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Iron Man</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0413300')">
+            <img src="https://image.tmdb.org/t/p/w500/qFmwhVUoUSXjkKRmca5yGDEXBIj.jpg" alt="Spider-Man 3">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Spider-Man 3</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0167260')">
+            <img src="https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg" alt="The Lord of the Rings: The Return of the King">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Lord of the Rings: The Return of the King</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2948356')">
+            <img src="https://image.tmdb.org/t/p/w500/hlK0e0wAQ3VLuJcsfIYPvb4JVud.jpg" alt="Zootopia">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Zootopia</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0110912')">
+            <img src="https://image.tmdb.org/t/p/w500/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg" alt="Pulp Fiction">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Pulp Fiction</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1201607')">
+            <img src="https://image.tmdb.org/t/p/w500/c54HpQmuwXjHq2C9wmoACjxoom3.jpg" alt="Harry Potter and the Deathly Hallows: Part 2">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Harry Potter and the Deathly Hallows: Part 2</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2380307')">
+            <img src="https://image.tmdb.org/t/p/w500/6Ryitt95xrO8KXuqRGm1fUuNwqF.jpg" alt="Coco">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Coco</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt41617470')">
+            <img src="https://image.tmdb.org/t/p/w500/3bEqHqeaQlFykaLQ7N4gDkIvL5w.jpg" alt="Desire">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Desire</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0110357')">
+            <img src="https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg" alt="The Lion King">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Lion King</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt27543632')">
+            <img src="https://image.tmdb.org/t/p/w500/cWsBscZzwu5brg9YjNkGewRUvJX.jpg" alt="The Housemaid">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Housemaid</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32612507')">
+            <img src="https://image.tmdb.org/t/p/w500/1q308iixueCU4pFtSYugNOevtNx.jpg" alt="Lee Cronin's The Mummy">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Lee Cronin's The Mummy</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt9603208')">
+            <img src="https://image.tmdb.org/t/p/w500/iKPsC9EFUafRP9SrUznI61getVP.jpg" alt="Mission: Impossible - The Final Reckoning">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Mission: Impossible - The Final Reckoning</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0120737')">
+            <img src="https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg" alt="The Lord of the Rings: The Fellowship of the Ring">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Lord of the Rings: The Fellowship of the Ring</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0109830')">
+            <img src="https://image.tmdb.org/t/p/w500/Cw4hIUIAmSYfK9QfaUW5igp9La.jpg" alt="Forrest Gump">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Forrest Gump</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0435761')">
+            <img src="https://image.tmdb.org/t/p/w500/AbbXspMOwdvwWZgVN0nabZq03Ec.jpg" alt="Toy Story 3">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Toy Story 3</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt15239678')">
+            <img src="https://image.tmdb.org/t/p/w500/6izwz7rsy95ARzTR3poZ8H6c5pp.jpg" alt="Dune: Part Two">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Dune: Part Two</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0110357')">
+            <img src="https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg" alt="The Lion King">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Lion King</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1392190')">
+            <img src="https://image.tmdb.org/t/p/w500/ulcAi4dKpAjHwYGS08vNyx9H6I9.jpg" alt="Mad Max: Fury Road">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Mad Max: Fury Road</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt3758172')">
+            <img src="https://image.tmdb.org/t/p/w500/tDgxknTVwrScxpCYyGUjXSn5NRk.jpg" alt="Jungle">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Jungle</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt37042085')">
+            <img src="https://image.tmdb.org/t/p/w500/l3wevYWTpiZSUEM5B0Q8c21ALAD.jpg" alt="Elize: Shadows of a Woman">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Elize: Shadows of a Woman</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0948470')">
+            <img src="https://image.tmdb.org/t/p/w500/jexoNYnPd6vVrmygwF6QZmWPFdu.jpg" alt="The Amazing Spider-Man">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Amazing Spider-Man</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0245429')">
+            <img src="https://image.tmdb.org/t/p/w500/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg" alt="Spirited Away">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Spirited Away</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2582802')">
+            <img src="https://image.tmdb.org/t/p/w500/7fn624j5lj3xTme2SgiLCeuedmO.jpg" alt="Whiplash">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Whiplash</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2948356')">
+            <img src="https://image.tmdb.org/t/p/w500/hlK0e0wAQ3VLuJcsfIYPvb4JVud.jpg" alt="Zootopia">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Zootopia</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt36958312')">
+            <img src="https://image.tmdb.org/t/p/w500/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg" alt="The Devil's Mouth">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Devil's Mouth</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0114369')">
+            <img src="https://image.tmdb.org/t/p/w500/191nKfP0ehp3uIvWqgPbFmI4lv9.jpg" alt="Se7en">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Se7en</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0926084')">
+            <img src="https://image.tmdb.org/t/p/w500/iGoXIpQb7Pot00EEdwpwPajheZ5.jpg" alt="Harry Potter and the Deathly Hallows: Part 1">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Harry Potter and the Deathly Hallows: Part 1</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt13405778')">
+            <img src="https://image.tmdb.org/t/p/w500/d07phJqCx6z5wILDYqkyraorDPi.jpg" alt="Insidious: The Red Door">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Insidious: The Red Door</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt27543632')">
+            <img src="https://image.tmdb.org/t/p/w500/cWsBscZzwu5brg9YjNkGewRUvJX.jpg" alt="The Housemaid">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Housemaid</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1745960')">
+            <img src="https://image.tmdb.org/t/p/w500/n0YuM4f5lvGAP6MAW2kBIzugXnc.jpg" alt="Top Gun: Maverick">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Top Gun: Maverick</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1872181')">
+            <img src="https://image.tmdb.org/t/p/w500/bU7nTmvmy0h3VUP01v1T2imgH6N.jpg" alt="The Amazing Spider-Man 2">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Amazing Spider-Man 2</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt16366836')">
+            <img src="https://image.tmdb.org/t/p/w500/vGXptEdgZIhPg3cGlc7e8sNPC2e.jpg" alt="Venom: The Last Dance">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Venom: The Last Dance</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt20969586')">
+            <img src="https://image.tmdb.org/t/p/w500/hqcexYHbiTBfDIdDWxrxPtVndBX.jpg" alt="Thunderbolts*">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Thunderbolts*</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0910970')">
+            <img src="https://image.tmdb.org/t/p/w500/hbhFnRzzg6ZDmm8YAmxBnQpQIPh.jpg" alt="WALL·E">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">WALL·E</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0330373')">
+            <img src="https://image.tmdb.org/t/p/w500/fECBtHlr0RB3foNHDiCBXeg9Bv9.jpg" alt="Harry Potter and the Goblet of Fire">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Harry Potter and the Goblet of Fire</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0126029')">
+            <img src="https://image.tmdb.org/t/p/w500/iB64vpL3dIObOtMZgX3RqdVdQDc.jpg" alt="Shrek">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Shrek</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0198781')">
+            <img src="https://image.tmdb.org/t/p/w500/wFSpyMsp7H0ttERbxY7Trlv8xry.jpg" alt="Monsters, Inc.">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Monsters, Inc.</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt13452544')">
+            <img src="https://image.tmdb.org/t/p/w500/3BjLdTWRiHc1ISIZMFvToOmghOM.jpg" alt="Graphic Desires">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Graphic Desires</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt15940132')">
+            <img src="https://image.tmdb.org/t/p/w500/rFhKkXhk7ClU03jQ5rHIApJDwev.jpg" alt="War Machine">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">War Machine</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt41617470')">
+            <img src="https://image.tmdb.org/t/p/w500/3bEqHqeaQlFykaLQ7N4gDkIvL5w.jpg" alt="Desire">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Desire</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0095016')">
+            <img src="https://image.tmdb.org/t/p/w500/7Bjd8kfmDSOzpmhySpEhkUyK2oH.jpg" alt="Die Hard">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Die Hard</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0327597')">
+            <img src="https://image.tmdb.org/t/p/w500/4jeFXQYytChdZYE9JYO7Un87IlW.jpg" alt="Coraline">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Coraline</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt9603208')">
+            <img src="https://image.tmdb.org/t/p/w500/iKPsC9EFUafRP9SrUznI61getVP.jpg" alt="Mission: Impossible - The Final Reckoning">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Mission: Impossible - The Final Reckoning</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1345836')">
+            <img src="https://image.tmdb.org/t/p/w500/hr0L2aueqlP2BYUblTTjmtn0hw4.jpg" alt="The Dark Knight Rises">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Dark Knight Rises</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0167261')">
+            <img src="https://image.tmdb.org/t/p/w500/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg" alt="The Lord of the Rings: The Two Towers">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Lord of the Rings: The Two Towers</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0172495')">
+            <img src="https://image.tmdb.org/t/p/w500/wN2xWp1eIwCKOD0BHTcErTBv1Uq.jpg" alt="Gladiator">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Gladiator</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0096472')">
+            <img src="https://image.tmdb.org/t/p/w500/uTVfcol62NROZw2W2Q7ykbFgPQ.jpg" alt="School on Fire">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">School on Fire</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1049413')">
+            <img src="https://image.tmdb.org/t/p/w500/mFvoEwSfLqbcWwFsDjQebn9bzFe.jpg" alt="Up">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Up</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2245084')">
+            <img src="https://image.tmdb.org/t/p/w500/2mxS4wUimwlLmI1xp6QW6NSU361.jpg" alt="Big Hero 6">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Big Hero 6</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt32430579')">
+            <img src="https://image.tmdb.org/t/p/w500/tVvpFIoteRHNnoZMhdnwIVwJpCA.jpg" alt="Crime 101">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Crime 101</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt4520988')">
+            <img src="https://image.tmdb.org/t/p/w500/mINJaa34MtknCYl5AjtNJzWj8cD.jpg" alt="Frozen II">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Frozen II</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt16311594')">
+            <img src="https://image.tmdb.org/t/p/w500/9PXZIUsSDh4alB80jheWX4fhZmy.jpg" alt="F1">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">F1</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt35538033')">
+            <img src="https://image.tmdb.org/t/p/w500/qku2uWSoJ9amQV5MWo1Eek29iji.jpg" alt="Resident Evil">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Resident Evil</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt6751668')">
+            <img src="https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" alt="Parasite">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Parasite</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1630029')">
+            <img src="https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" alt="Avatar: The Way of Water">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Avatar: The Way of Water</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0095052')">
+            <img src="https://image.tmdb.org/t/p/w500/6uiz2xx61qhGv3ZcZg0n5tgahY3.jpg" alt="Woman in the Moon">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Woman in the Moon</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt26743210')">
+            <img src="https://image.tmdb.org/t/p/w500/53dsJ3oEnBhTBVMigWJ9tkA5bzJ.jpg" alt="How to Train Your Dragon">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">How to Train Your Dragon</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0458352')">
+            <img src="https://image.tmdb.org/t/p/w500/8912AsVuS7Sj915apArUFbv6F9L.jpg" alt="The Devil Wears Prada">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Devil Wears Prada</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt1457767')">
+            <img src="https://image.tmdb.org/t/p/w500/wVYREutTvI2tmxr6ujrHT704wGF.jpg" alt="The Conjuring">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Conjuring</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt7286456')">
+            <img src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" alt="Joker">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Joker</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0800080')">
+            <img src="https://image.tmdb.org/t/p/w500/gKzYx79y0AQTL4UAk1cBQJ3nvrm.jpg" alt="The Incredible Hulk">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Incredible Hulk</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt35309713')">
+            <img src="https://image.tmdb.org/t/p/w500/6LmJD3Wohe0g4U62wgi7RyJqfE4.jpg" alt="Citizen Vigilante">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Citizen Vigilante</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt31193180')">
+            <img src="https://image.tmdb.org/t/p/w500/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg" alt="Sinners">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Sinners</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0103064')">
+            <img src="https://image.tmdb.org/t/p/w500/jFTVD4XoWQTcg7wdyJKa8PEds5q.jpg" alt="Terminator 2: Judgment Day">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Terminator 2: Judgment Day</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0325980')">
+            <img src="https://image.tmdb.org/t/p/w500/poHwCZeWzJCShH7tOjg8RIoyjcw.jpg" alt="Pirates of the Caribbean: The Curse of the Black Pearl">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Pirates of the Caribbean: The Curse of the Black Pearl</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt33070884')">
+            <img src="https://image.tmdb.org/t/p/w500/vCIQeQ2ynVqEjIvtbOXGnKtcgAX.jpg" alt="The Brink of War">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">The Brink of War</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt5726086')">
+            <img src="https://image.tmdb.org/t/p/w500/6c9ti2JcR3dHyR3qFXoZqVMx0SH.jpg" alt="Insidious: The Last Key">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Insidious: The Last Key</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0078748')">
+            <img src="https://image.tmdb.org/t/p/w500/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg" alt="Alien">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Alien</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt21909764')">
+            <img src="https://image.tmdb.org/t/p/w500/w46Vw536HwNnEzOa7J24YH9DPRS.jpg" alt="My Fault">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">My Fault</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt30472557')">
+            <img src="https://image.tmdb.org/t/p/w500/pHyxb2RV5wLlboAwm9ZJ9qTVEDw.jpg" alt="Chainsaw Man - The Movie: Reze Arc">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Chainsaw Man - The Movie: Reze Arc</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt2637276')">
+            <img src="https://image.tmdb.org/t/p/w500/38C91I7Xft0gyY7BITm8i4yvuRb.jpg" alt="Ted 2">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">Ted 2</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/movie/tt0892769')">
+            <img src="https://image.tmdb.org/t/p/w500/ygGmAO60t8GyqUo9xYeYxSZAR3b.jpg" alt="How to Train Your Dragon">
+            <div class="card-info">
+                <span class="badge">MOVIE</span><br>
+                <strong style="margin-top:5px; display:block;">How to Train Your Dragon</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2057880/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/onSD9UXfJwrMXWhq7UY7hGF2S1h.jpg" alt="Watch What Happens Live with Andy Cohen">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Watch What Happens Live with Andy Cohen</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt9288030/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg" alt="Reacher">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Reacher</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1196946/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/acYXu4KaDj1NIkMgObnhe4C4a0T.jpg" alt="The Mentalist">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Mentalist</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0053494/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/5x1HXqYqPyYw7oc7Isu1lvVmwRP.jpg" alt="Coronation Street">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Coronation Street</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt14688458/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg" alt="Silo">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Silo</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt7997010/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/1hqGagr94soBq70Lq7tPHvNmmxy.jpg" alt="Home Alone">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Home Alone</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt13111078/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/rzpHPSEgPTpRs8EHbygwsOw7jC0.jpg" alt="Lioness">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Lioness</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0096697/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/uWpG7GqfKGQqX4YMAo3nv5OrglV.jpg" alt="The Simpsons">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Simpsons</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt10986410/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/uRHsiw1wLxPHFXkkv4Ix1s0O6f4.jpg" alt="Ted Lasso">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Ted Lasso</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt3444938/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/1N4o5PmmqhlVDrcdJ2RlCFWbLGX.jpg" alt="The Tonight Show Starring Jimmy Fallon">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Tonight Show Starring Jimmy Fallon</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0203259/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/iofokHZoUB4Qhik4PflvJl8TT6a.jpg" alt="Law & Order: Special Victims Unit">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Law & Order: Special Victims Unit</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt3697842/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/9jkThAGYj2yp8jsS6Nriy5mzKFT.jpg" alt="The Late Show with Stephen Colbert">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Late Show with Stephen Colbert</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0452046/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/hWSb4UnIjlTvnvrP98NbFSO60HA.jpg" alt="Criminal Minds">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Criminal Minds</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2472450/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/AaOxyfJdXcb1FnKeoj87FiHUs0w.jpg" alt="El conquistador">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">El conquistador</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0055708/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/uSvET5YUvHNDIeoCpErrbSmasFb.jpg" alt="The Tonight Show Starring Johnny Carson">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Tonight Show Starring Johnny Carson</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0246393/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/7dFZJ2ZJJdcmkp05B9NWlqTJ5tq.jpg" alt="Tagesschau">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Tagesschau</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt7587890/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/70kTz0OmjjZe7zHvIDrq2iKW7PJ.jpg" alt="The Rookie">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Rookie</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0944947/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg" alt="Game of Thrones">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Game of Thrones</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0063951/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/14k9BfZ2p4rQBMeJ5crKTfUZVwD.jpg" alt="Sesame Street">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Sesame Street</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0397306/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/eb9sH2am9IUSQ8GhXTNAVoujk8W.jpg" alt="American Dad!">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">American Dad!</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0413573/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/hjJkrLXhWvGHpLeLBDFznpBTY1S.jpg" alt="Grey's Anatomy">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Grey's Anatomy</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0460681/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/8iixmfGx5EIFPdpNvB2JvI3VIqX.jpg" alt="Supernatural">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Supernatural</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt26545992/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/gpC7h43xPMEV3goYMQShfJbTtLq.jpg" alt="Lanterns">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Lanterns</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0364845/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/mBcu8d6x6zB1el3MPNl7cZQEQ31.jpg" alt="NCIS">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">NCIS</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0247082/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/i5hmoRjHNWady4AtAGICTUXknKH.jpg" alt="CSI: Crime Scene Investigation">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">CSI: Crime Scene Investigation</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0098844/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/haJ9eHytVO3H3JooMJG1DiWwDNm.jpg" alt="Law & Order">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Law & Order</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0156214/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/2DIBDFHiKQawz4WPsYekl9DHwyA.jpg" alt="Kamen Rider">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Kamen Rider</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0281446/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/snIRCY6Qhei08YUNQjjZI2gc4CK.jpg" alt="Gran hermano">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Gran hermano</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt4938990/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/zgMOq3H27nYikqjykeXCIIFRbjK.jpg" alt="Law of the Jungle">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Law of the Jungle</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0138968/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/vHwgcxGQH8KpgTL4KEV4eG2IAn8.jpg" alt="Hollywood Squares">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Hollywood Squares</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1839337/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/7ah1WExcMkzbq7sARCTmcC23tBr.jpg" alt="The Voice">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Voice</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0182576/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/3PFsEuAiyLkWsP4GG6dIV37Q6gu.jpg" alt="Family Guy">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Family Guy</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2771780/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/kPKAigYUlWRpnfo4Ptiwlz4FWXU.jpg" alt="Teen Titans Go!">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Teen Titans Go!</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt10691888/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/gPNWVCp0zrHRmwfovUpUQO44sts.jpg" alt="All Elite Wrestling: Dynamite">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">All Elite Wrestling: Dynamite</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0386676/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/7DJKHzAi83BmQrWLrYYOqcoKfhR.jpg" alt="The Office">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Office</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt9022950/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/sBix25bie9UQFzbarN51DpFO5ky.jpg" alt="The Kelly Clarkson Show">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Kelly Clarkson Show</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1505970/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/8u8rCCeuBufMQ1VlGX0lruhDaPR.jpg" alt="AIBOU: Tokyo Detective Duo">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">AIBOU: Tokyo Detective Duo</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0486240/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ycSBcACecVR0zSnP2ZF83k5f7he.jpg" alt="Paradise Hotel">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Paradise Hotel</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt4083422/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/9ZN1P32SHviL3SV51qLivxycvcx.jpg" alt="Doraemon">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Doraemon</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0479846/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/jfFNydakwvbeACEwSd2Gh8UWtba.jpg" alt="Storm of Love">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Storm of Love</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1586680/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ifo31fMWLmyOVpdak9K0kY4jldQ.jpg" alt="Shameless">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Shameless</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt13210838/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/tw3tzfXaSpmUZIB8ZNqNEGzMBCy.jpg" alt="The Gentlemen">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Gentlemen</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0118401/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/pz7tsWxe0TTdfJnWPjZAEnrSl5M.jpg" alt="Midsomer Murders">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Midsomer Murders</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1224144/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ewYjHmmyxIaM3heRO0eZaOA6xo2.jpg" alt="REBORN!">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">REBORN!</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0103434/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/qujVFLAlBnPU9mZElV4NZgL8iXT.jpg" alt="Gute Zeiten, schlechte Zeiten">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Gute Zeiten, schlechte Zeiten</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt37884717/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/yiAzR6wGqjyAotZ4DvFvFeo8QS0.jpg" alt="The Early Spring">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Early Spring</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0115147/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ixcfyK7it6FjRM36Te4OdblAq4X.jpg" alt="The Daily Show">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Daily Show</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0217579/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/pYXkdXyqnmKFf01Yi6MkbfMczhv.jpg" alt="Jason and the Argonauts">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Jason and the Argonauts</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2861424/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/owhkU6KRqdXoUQpjV8uyZGPtX58.jpg" alt="Rick and Morty">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Rick and Morty</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt7124904/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/7BjipkA48xXLauTg45QKiOb144a.jpg" alt="Tomorrow Is Ours">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Tomorrow Is Ours</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt5489690/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/k6KhQBpW4gdcoSp9JQvQFq14lFI.jpg" alt="Paradise Hotel">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Paradise Hotel</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0106053/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/fTBC5EpsgKmli9VQcJMtqQ08Qj4.jpg" alt="Late Show with David Letterman">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Late Show with David Letterman</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0903747/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/anFx9aTOOYqgS3v7x3R84Kz67ly.jpg" alt="Breaking Bad">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Breaking Bad</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt4087032/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/jMpBQr2aNOFAI6wsC47zsOG6qOh.jpg" alt="Good Mythical Morning">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Good Mythical Morning</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1710308/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/mS5SLxMYcKfUxA0utBSR5MOAWWr.jpg" alt="Regular Show">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Regular Show</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0460627/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/eyTu5c8LniVciRZIOSHTvvkkgJa.jpg" alt="Bones">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Bones</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0175383/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/kBBbSgNchtMvsgD6z1oI1RRluHP.jpg" alt="Among Friends">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Among Friends</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt3513388/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/u8VruEGv7mtyJihVn2CSA1u90pk.jpg" alt="Late Night with Seth Meyers">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Late Night with Seth Meyers</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2261391/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/r915sk2JpthZSjHEgZKifWxgo6L.jpg" alt="Chicago Fire">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Chicago Fire</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2084564/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/2rTGn2CBavgioMVorVdZHgmdA2n.jpg" alt="Pelotón">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Pelotón</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0108778/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/2koX1xLkpTQM4IZebYvKysFW1Nh.jpg" alt="Friends">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Friends</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt6283624/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/uRUZDsvUfIP3JUEgOC8ReBlQQUU.jpg" alt="Radio Star">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Radio Star</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt11198330/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/7V0Ebks0GgpKvQ7QbLAIdX5dos4.jpg" alt="House of the Dragon">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">House of the Dragon</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt5247622/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/2jIi55JtYKJTL1km8qHMuUilOWo.jpg" alt="Men on a Mission">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Men on a Mission</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0279600/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/mHZSq8LA5Dt48JjaOZ5tcPXQRVN.jpg" alt="Smallville">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Smallville</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1369735/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/tMla86L8qc9eXlreRzfEMrHQahV.jpg" alt="Однажды будет любовь">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Однажды будет любовь</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0368530/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/sOrelBaAhp7DZbPTivDwKEyPslC.jpg" alt="One Tree Hill">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">One Tree Hill</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0412142/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/3Cz7ySOQJmqiuTdrc6CY0r65yDI.jpg" alt="House">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">House</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0455275/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/wnmNPaLvhnMeOqnWlhNkYCZxtda.jpg" alt="Prison Break">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Prison Break</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0434665/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/2EewmxXe72ogD0EaWM8gqa0ccIw.jpg" alt="Bleach">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Bleach</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0835962/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/2qup6w78HhDiSii7v8vYgfEsz6E.jpg" alt="Alles was zählt">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Alles was zählt</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt6470478/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/luhKkdD80qe62fwop6sdrXK9jUT.jpg" alt="The Good Doctor">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Good Doctor</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt9813792/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/pRtJagIxpfODzzb0T0NAvZSzErC.jpg" alt="FROM">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">FROM</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1520211/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ng3cMtxYKt1OSQYqFlnKWnVsqNO.jpg" alt="The Walking Dead">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Walking Dead</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt6111130/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/1l7vsAIkqOzrqiPwjO27Cb5QdfJ.jpg" alt="S.W.A.T.">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">S.W.A.T.</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1305826/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/qk3eQ8jW4opJ48gFWYUXWaMT4l.jpg" alt="Adventure Time">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Adventure Time</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2580046/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/acrtAy8gmxcsEvrDP09MpMSCeDZ.jpg" alt="Miraculous: Tales of Ladybug & Cat Noir">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Miraculous: Tales of Ladybug & Cat Noir</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2805096/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/bez40PgT36RUu4gstD2A6GSM0tP.jpg" alt="Chicago P.D.">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Chicago P.D.</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2375022/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/AkoQr6axSoFdpTuPt0dY3WekIeY.jpg" alt="Show! Music Core">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Show! Music Core</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt10293938/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ovDgO2LPfwdVRfvScAqo9aMiIW.jpg" alt="Outer Banks">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Outer Banks</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2306299/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/bQLrHIRNEkE3PdIWQrZHynQZazu.jpg" alt="Vikings">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Vikings</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1305826/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/qk3eQ8jW4opJ48gFWYUXWaMT4l.jpg" alt="Adventure Time">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Adventure Time</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2931524/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/JTzASS9kdvmeIPZgK27dl6DdQw.jpg" alt="House Rules">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">House Rules</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1600194/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/sIdCKlmM2nU4akIvFQaAIiU8YES.jpg" alt="Hawaii Five-0">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Hawaii Five-0</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt6473344/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/6iSnec83UEMgLOXAtGYwaVNHLjR.jpg" alt="SEAL Team">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">SEAL Team</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0275140/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/zgBg8gTCELQg73awE7qAuV06c4Z.jpg" alt="Law & Order: Criminal Intent">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Law & Order: Criminal Intent</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1190634/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/in1R2dDc421JxsoRWaIIAqVI2KE.jpg" alt="The Boys">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Boys</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt13546008/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/dLjqBkwQw1qMTh2gv1jH5E02VdY.jpg" alt="Kavyanjali">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Kavyanjali</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1527854/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/3bzECfllho8PphdYujLUIuhncJD.jpg" alt="Binnelanders">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Binnelanders</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0410975/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/4qeI51jDzH81PpUUNaJCBrfm7f6.jpg" alt="Desperate Housewives">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Desperate Housewives</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt4574334/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg" alt="Stranger Things">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Stranger Things</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0138968/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/vHwgcxGQH8KpgTL4KEV4eG2IAn8.jpg" alt="Hollywood Squares">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Hollywood Squares</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0294075/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/h2HFhwgU7xcIEpgDuuPHfh5NOVZ.jpg" alt="The Daily Fable">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Daily Fable</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0106004/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/gYAb6GCVEFsU9hzMCG5rxaxoIv3.jpg" alt="Frasier">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Frasier</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0368530/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/sOrelBaAhp7DZbPTivDwKEyPslC.jpg" alt="One Tree Hill">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">One Tree Hill</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt6283624/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/uRUZDsvUfIP3JUEgOC8ReBlQQUU.jpg" alt="Radio Star">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Radio Star</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt7235466/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/6njUqsd3By2mJsdZm1P0moPLzs3.jpg" alt="9-1-1">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">9-1-1</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2098220/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/i2EEr2uBvRlAwJ8d8zTG2Y19mIa.jpg" alt="Hunter x Hunter">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Hunter x Hunter</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0141842/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/rTc7ZXdroqjkKivFPvCPX0Ru7uw.jpg" alt="The Sopranos">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Sopranos</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2375022/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/AkoQr6axSoFdpTuPt0dY3WekIeY.jpg" alt="Show! Music Core">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Show! Music Core</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0106004/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/gYAb6GCVEFsU9hzMCG5rxaxoIv3.jpg" alt="Frasier">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Frasier</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1601141/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/9nLBX5Bf7PW4FAaWJLXpFFdeTlV.jpg" alt="WWE NXT">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">WWE NXT</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt4236770/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/peNC0eyc3TQJa6x4TdKcBPNP4t0.jpg" alt="Yellowstone">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Yellowstone</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0238784/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/gwtzCwU2wdLLf8oejQu2TINiWfQ.jpg" alt="Gilmore Girls">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Gilmore Girls</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt6226232/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/kidkbZRBGbsEIrX7pODRSKi9ipl.jpg" alt="Young Sheldon">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Young Sheldon</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0410975/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/4qeI51jDzH81PpUUNaJCBrfm7f6.jpg" alt="Desperate Housewives">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Desperate Housewives</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0436992/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/lHfmc6d8pOVFrD0eOKPiDbjeucG.jpg" alt="Doctor Who">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Doctor Who</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt13546008/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/dLjqBkwQw1qMTh2gv1jH5E02VdY.jpg" alt="Kavyanjali">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Kavyanjali</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0159881/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/hfz0IgebqGENG6ZnuqKQKMFk2vy.jpg" alt="Jeopardy!">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Jeopardy!</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0773262/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/q8dWfc4JwQuv3HayIZeO84jAXED.jpg" alt="Dexter">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Dexter</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2306299/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/bQLrHIRNEkE3PdIWQrZHynQZazu.jpg" alt="Vikings">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Vikings</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt3107288/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/yZevl2vHQgmosfwUdVNzviIfaWS.jpg" alt="The Flash">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Flash</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0118276/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/y7fVZkyheCEQHDUEHwNmYENGfT2.jpg" alt="Buffy the Vampire Slayer">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Buffy the Vampire Slayer</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1632701/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/vQiryp6LioFxQThywxbC6TuoDjy.jpg" alt="Suits">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Suits</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0139803/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/jjfTTjVYWyD6rGHVbnC44IrsJ7P.jpg" alt="Top of the Pops">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Top of the Pops</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt6473344/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/6iSnec83UEMgLOXAtGYwaVNHLjR.jpg" alt="SEAL Team">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">SEAL Team</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1405406/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/b3vl6wV1W8PBezFfntKTrhrehCY.jpg" alt="The Vampire Diaries">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Vampire Diaries</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt10293938/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ovDgO2LPfwdVRfvScAqo9aMiIW.jpg" alt="Outer Banks">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Outer Banks</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0050051/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/sK6JvgNFP1ClT4aF4nPAZiDpAdk.jpg" alt="Perry Mason">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Perry Mason</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt4574334/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg" alt="Stranger Things">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Stranger Things</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1190634/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/in1R2dDc421JxsoRWaIIAqVI2KE.jpg" alt="The Boys">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Boys</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0052507/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/cAMWBJyYynFWxJNrIvVnHlN2e9P.jpg" alt="The Bullwinkle Show">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Bullwinkle Show</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2931524/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/JTzASS9kdvmeIPZgK27dl6DdQw.jpg" alt="House Rules">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">House Rules</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0165592/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/aIgjKkazKMhqQjytljsofAEsp3q.jpg" alt="Play for Today">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Play for Today</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0285331/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/iq6yrZ5LEDXf1ArCOYLq8PIUBpV.jpg" alt="24">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">24</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1442462/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/lasNCd45fpPLirlA7QxkuopWro.jpg" alt="The Good Wife">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Good Wife</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0185103/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/fstEe6RsyNyPUnMwNcL20iNl0nE.jpg" alt="Raw">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Raw</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0149460/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/eM8bbTn8C8vUwwS6upzzm7gX31u.jpg" alt="Futurama">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Futurama</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt7491982/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/zfKS4WL0OZ9udpNoSYZw91VB3aH.jpg" alt="FBI">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">FBI</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt14962432/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/8RtwL5gxUvh9YViqjhNlVRvJpum.jpg" alt="Overflow">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Overflow</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt4546568/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/3ZIPTvMnzI5ThmdGeEYQFxJV5Sg.jpg" alt="Infinite Challenge">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Infinite Challenge</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt3121722/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/8HXkgUBO5OF8ZK9XbY69RM4S5rv.jpg" alt="PAW Patrol">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">PAW Patrol</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0313043/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/pNW64pjaHvf6purNaFhq4SHYRfl.jpg" alt="CSI: Miami">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">CSI: Miami</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0056751/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/xinqAmYrZ1TEwowcQhgTkZVtVE0.jpg" alt="Doctor Who">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Doctor Who</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0458254/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/pn2CVXjOlR8kY5MgOTJjZ71IM0Q.jpg" alt="The Colbert Report">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Colbert Report</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1353056/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ySs9xkTfPgQCUNB2ctOzcMWP14n.jpg" alt="RuPaul's Drag Race">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">RuPaul's Drag Race</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0118480/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg" alt="Stargate SG-1">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Stargate SG-1</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0144724/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/bF24r2FxsjzgkJcrbBU8RC9JVoU.jpg" alt="Young Hearts">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Young Hearts</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1194223/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/tGIDuv3ySOGk8agG34fKMZI7BTB.jpg" alt="X Factor">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">X Factor</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0458290/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/e1nWfnnCVqxS2LeTO3dwGyAsG2V.jpg" alt="Star Wars: The Clone Wars">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Star Wars: The Clone Wars</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0092400/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/qxdOgESOkBMmfcWUizL01mbdqzl.jpg" alt="Married... with Children">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Married... with Children</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0106179/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/rcBx0p8h51LHceyhquYMxbspJQu.jpg" alt="The X-Files">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The X-Files</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1888075/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/u7t6vCyqAdD5hE4eEfTrZmVljDi.jpg" alt="Death in Paradise">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Death in Paradise</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0294075/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/h2HFhwgU7xcIEpgDuuPHfh5NOVZ.jpg" alt="The Daily Fable">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Daily Fable</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0135733/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/tVFCu0jE9m5QHmHM4rzEFGs1kUI.jpg" alt="Match of the Day">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Match of the Day</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0046617/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/vqbVr4fYRZb28ywczaidn29JJTA.jpg" alt="Lassie">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Lassie</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0185819/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ugYAGyxwajuplDUUYT8Bzbj8eNR.jpg" alt="Secret Lives">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Secret Lives</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt6472622/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ueI9EeoRdMVa7hWEm21nQEU8Zv3.jpg" alt="Souryo to Majiwaru Shikiyoku no Yoru ni...">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Souryo to Majiwaru Shikiyoku no Yoru ni...</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt31938062/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/kvFSpESyBZMjaeOJDx7RS3P1jey.jpg" alt="The Pitt">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Pitt</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0806910/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/yh43TKi9himQWhzrlWBxV8WjsFn.jpg" alt="Scene of the Crime">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Scene of the Crime</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0200276/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/yqDWr5NAE7m1IWrygYwLyEB6pN0.jpg" alt="The West Wing">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The West Wing</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0101188/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/wmsINbZuEBLNP2Z26Xffx5NHJpW.jpg" alt="Rugrats">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Rugrats</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt5607616/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/oHqYrPAsIiTD5m4DuxumV4er8BU.jpg" alt="Re:ZERO -Starting Life in Another World-">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Re:ZERO -Starting Life in Another World-</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0096597/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/p1oXgtJ0q0wAcEp3tHA5DpiynxL.jpg" alt="Goede Tijden, Slechte Tijden">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Goede Tijden, Slechte Tijden</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt19231492/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/2DPmTlv8F0V1TQBPmlsGOVOhtWk.jpg" alt="Dark Matter">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Dark Matter</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt5622316/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/dqVUFuNrMFWt7uGNWlpo91VKYOI.jpg" alt="The Chosen">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Chosen</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0478441/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/zE4hi4gDP0T8HDC4noHasNsBKtb.jpg" alt="Paradise Hotel">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Paradise Hotel</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1561755/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/iIHsQe3Qjs3NH62HdamyQEPeqTR.jpg" alt="Bob's Burgers">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Bob's Burgers</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1533783/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/38N3KQblPyTLGWNZs2qmy9mQywm.jpg" alt="Scènes de ménages">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Scènes de ménages</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0411008/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/og6S0aTZU6YUJAbqxeKjCa3kY1E.jpg" alt="Lost">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Lost</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0158552/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/z4bPJ1BWU2EtV69NII2GVvsugQ2.jpg" alt="Charmed">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Charmed</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt30329776/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/jIl5E51O3oztmuyNZtXkbPSyKws.jpg" alt="Sohag Chand">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Sohag Chand</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt30985733/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/wsTjWy6NE2s3h0neChr0D92ddwI.jpg" alt="Hello Saturday">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Hello Saturday</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0077000/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/jmqo8bgHrhKYPc0RK5F71GHa8rm.jpg" alt="Dallas">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Dallas</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2442560/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/vUUqzWa2LnHIVqkaKVlVGkVcZIW.jpg" alt="Peaky Blinders">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Peaky Blinders</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0466513/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/g0x9tcHp8SV8UH4yq40g5zu6phu.jpg" alt="Jornal Nacional">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Jornal Nacional</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0320037/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/bGB6bEbG4qL22C1SFupkdAxYC9i.jpg" alt="Jimmy Kimmel Live!">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Jimmy Kimmel Live!</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0118375/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/e2xyMapmYgv4AuSoSDv9Y4pQlD6.jpg" alt="King of the Hill">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">King of the Hill</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt5420376/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/d8mmn9thQ5dBk2qbv6BCqGUXWK3.jpg" alt="Riverdale">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Riverdale</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0306368/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/8Qfq22zP5PeUKJfN5bFPFJtJz5i.jpg" alt="Operación triunfo">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Operación triunfo</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2193021/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/u8ZHFj1jC384JEkTt3vNg1DfWEb.jpg" alt="Arrow">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Arrow</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt3559124/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/41EWXLXTZO4MLb2BL28mWZuydyq.jpg" alt="The Tom and Jerry Show">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Tom and Jerry Show</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt7631058/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/kf5Hz70tjNAHg4swGDzOr9BfoZ1.jpg" alt="The Lord of the Rings: The Rings of Power">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Lord of the Rings: The Rings of Power</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1637574/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/oQxrvUhP3ycwnlxIrIMQ9Z3kleq.jpg" alt="Conan">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Conan</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0458253/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/q6FhABXGf3TaYKoKNwzGAEzW7bt.jpg" alt="The Closer">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Closer</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1280627/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/7Jzrp2piY29h8UgA2hEXsxCskt1.jpg" alt="The Rachel Maddow Show">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Rachel Maddow Show</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0458290/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/e1nWfnnCVqxS2LeTO3dwGyAsG2V.jpg" alt="Star Wars: The Clone Wars">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Star Wars: The Clone Wars</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1796960/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/6GAvS2e6VIRsms9FpVt33PsCoEW.jpg" alt="Homeland">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Homeland</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt16358384/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/rOYLWCdAifpUtPlTf1WHxyaxeMt.jpg" alt="Tulsa King">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Tulsa King</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt32335206/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/csdQGYq7zZ6Tt3BwIE3dfT3QcHr.jpg" alt="Ninaithen Vandhai">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Ninaithen Vandhai</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt26743760/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/e3ojpANrFnmJCyeBNTinYwyBCIN.jpg" alt="The Apothecary Diaries">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Apothecary Diaries</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1405406/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/b3vl6wV1W8PBezFfntKTrhrehCY.jpg" alt="The Vampire Diaries">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">The Vampire Diaries</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0112022/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/zPyHpkJZ5O08lbgrQQIROXtb3xz.jpg" alt="JAG">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">JAG</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt6890994/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/f5w1btrj6iLp7GZSGvVLdWWWv8V.jpg" alt="Kaala Teeka">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Kaala Teeka</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0094525/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/6f4IVfbn8knb7RjdZlGLuW5guDc.jpg" alt="Agatha Christie's Poirot">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Agatha Christie's Poirot</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1844624/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/x2c3AvZeTyNehRZXabTojAxfDuR.jpg" alt="American Horror Story">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">American Horror Story</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt22091076/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/xCtaUDBUP1iKqtoqpHfeH1T2pWF.jpg" alt="High Potential">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">High Potential</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt4546568/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/3ZIPTvMnzI5ThmdGeEYQFxJV5Sg.jpg" alt="Infinite Challenge">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Infinite Challenge</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt1378167/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/TIIgcznwNfNr3KOZvxn26eKV99.jpg" alt="NCIS: Los Angeles">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">NCIS: Los Angeles</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2359704/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ogAWwbh3frWtiTyyXrZaVFtqCgp.jpg" alt="JoJo's Bizarre Adventure">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">JoJo's Bizarre Adventure</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt0121220/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/oQ5CnVj3TRifXl2bIOri6H6rfNe.jpg" alt="Dragon Ball Z">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Dragon Ball Z</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt5420376/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/d8mmn9thQ5dBk2qbv6BCqGUXWK3.jpg" alt="Riverdale">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Riverdale</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt4052886/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/ekZobS8isE6mA53RAiGDG93hBxL.jpg" alt="Lucifer">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Lucifer</strong>
+            </div>
+        </div>
+    
+        <div class="card" onclick="openPlayer('https://vidsrc.to/embed/tv/tt2150751/1/1')">
+            <img src="https://image.tmdb.org/t/p/w500/nUfL7xK5DjViiQAwHiRYlb6VMTE.jpg" alt="Chihayafuru">
+            <div class="card-info">
+                <span class="badge">TV</span><br>
+                <strong style="margin-top:5px; display:block;">Chihayafuru</strong>
+            </div>
+        </div>
+    
+    </div>
+
+    <div id="playerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePlayer()">&times;</span>
+            <div style="position:relative; padding-bottom:56.25%; height:0;">
+                <iframe id="videoIframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPlayer(url) {
+            document.getElementById('videoIframe').src = url;
+            document.getElementById('playerModal').style.display = 'block';
+        }
+        function closePlayer() {
+            document.getElementById('videoIframe').src = '';
+            document.getElementById('playerModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
