@@ -14,8 +14,8 @@ LANG_CATEGORIES = {
     "Lollywood": "ur"
 }
 
-# Cloud run ke liye pages limit (GitHub Actions timeout se bachne ke liye per run 30-50 pages best hain)
-PAGES_TO_FETCH_PER_RUN = 30 
+# Har run mein har category ke 50 pages fetch honge (2020 se 2026 tak ka data cover karne ke liye)
+PAGES_TO_FETCH_PER_RUN = 50 
 
 def load_progress():
     if os.path.exists(TRACKER_FILE):
@@ -41,10 +41,11 @@ def fetch_all_deep_data():
     for category, lang in LANG_CATEGORIES.items():
         start_page = category_pages.get(category, 1)
         end_page = start_page + PAGES_TO_FETCH_PER_RUN
-        print(f"\n--- Fetching {category} from Page {start_page} to {end_page - 1} ---")
+        print(f"\n--- Fetching {category} (2020-2026) from Page {start_page} to {end_page - 1} ---")
         
         for page in range(start_page, end_page):
-            url = f"https://api.themoviedb.org/3/discover/movie?api_key={TMDB_API_KEY}&with_original_language={lang}&sort_by=popularity.desc&page={page}"
+            # 2020 se 2026 tak ki movies ka filter
+            url = f"https://api.themoviedb.org/3/discover/movie?api_key={TMDB_API_KEY}&with_original_language={lang}&primary_release_date.gte=2020-01-01&primary_release_date.lte=2026-12-31&sort_by=popularity.desc&page={page}"
             
             try:
                 response = requests.get(url)
@@ -66,7 +67,7 @@ def fetch_all_deep_data():
                         poster = f"https://image.tmdb.org/t/p/w500{poster_path}" if poster_path else "https://via.placeholder.com/500x750"
                         tmdb_id = item.get("id")
                         
-                        time.sleep(0.15)
+                        time.sleep(0.1)
                         ext_url = f"https://api.themoviedb.org/3/movie/{tmdb_id}/external_ids?api_key={TMDB_API_KEY}"
                         ext_res = requests.get(ext_url).json()
                         imdb_id = ext_res.get("imdb_id")
@@ -89,7 +90,7 @@ def fetch_all_deep_data():
                             
                 print(f"Fetched {category} Page {page} successfully.")
                 category_pages[category] = page + 1
-                time.sleep(0.2)
+                time.sleep(0.15)
             except Exception as e:
                 print(f"Error fetching {category} page {page}: {e}")
                 time.sleep(2)
@@ -272,4 +273,4 @@ html_content += """
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("HTML and progress updated successfully for Cloud runner.")
+print("HTML and progress updated successfully with 2020-2026 filter.")
