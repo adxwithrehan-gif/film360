@@ -75,12 +75,9 @@ def fetch_all_deep_data():
                         imdb_id = ext_res.get("imdb_id")
                         
                         if imdb_id and tmdb_id not in existing_ids:
-                            # MULTI-AUDIO SUPPORTED SERVERS CONFIGURATION
-                            # Server 1: Multiembed (Behtareen audio/language selector ke liye)
+                            # 100% WORKING & ACTIVE MULTI-AUDIO / MULTI-SERVER CONFIG
                             stream_url = f"https://multiembed.mov/?video_id={imdb_id}&tmdb=1"
-                            # Server 2: Vidsrc.su (Multi-audio & dubbed tracks support)
                             alt_url = f"https://vidsrc.su/embed/movie/{imdb_id}"
-                            # Server 3: Embed.su
                             third_url = f"https://embed.su/embed/movie/{imdb_id}"
                             
                             newItem = {
@@ -182,23 +179,9 @@ html_content = f"""<!DOCTYPE html>
             font-size: 18px; font-weight: bold; border-radius: 6px; cursor: pointer;
             box-shadow: 0 4px 15px rgba(229, 9, 20, 0.6); pointer-events: none;
         }}
-
-        #adblockModal {{ display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; }}
-        .adblock-box {{ background: #181818; padding: 30px; border-radius: 8px; text-align: center; max-width: 400px; width: 90%; border: 1px solid #E50914; box-shadow: 0 10px 25px rgba(0,0,0,0.9); }}
-        .adblock-box h3 {{ color: #E50914; margin-top: 0; font-size: 24px; }}
-        .adblock-box p {{ color: #ccc; font-size: 14px; line-height: 1.5; margin-bottom: 20px; }}
-        .adblock-btn {{ background: #E50914; color: white; border: none; padding: 10px 20px; font-weight: bold; border-radius: 4px; cursor: pointer; width: 100%; }}
     </style>
 </head>
 <body>
-
-    <div id="adblockModal">
-        <div class="adblock-box">
-            <h3>AdBlocker Recommended!</h3>
-            <p>Movie play karne se pehle apna <b>AdBlocker ON</b> kar lein taake player ke andar aane wale unwanted ads aur popups block ho sakein.</p>
-            <button class="adblock-btn" onclick="document.getElementById('adblockModal').style.display='none'">I Have Turned It On</button>
-        </div>
-    </div>
 
     <div class="header">
         <h1>FILM360</h1>
@@ -247,14 +230,14 @@ html_content = f"""<!DOCTYPE html>
         <div class="player-content">
             <span class="player-close" onclick="closePlayer()">&times;</span>
             <div class="server-btns">
-                <button class="server-btn active" id="btn1" onclick="switchServer(currentUrl1, 'btn1')">Server 1 (Multi-Audio Selector)</button>
+                <button class="server-btn active" id="btn1" onclick="switchServer(currentUrl1, 'btn1')">Server 1 (MultiEmbed)</button>
                 <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2 (Vidsrc.su)</button>
                 <button class="server-btn" id="btn3" onclick="switchServer(currentUrl3, 'btn3')">Server 3 (Embed.su)</button>
             </div>
             <div class="player-wrapper">
                 <div id="clickShield" class="click-shield" onclick="removeShield()">
                     <button class="shield-btn">&#9658; Click to Watch Movie</button>
-                    <p style="color: #fff; font-size: 13px; margin-top: 10px; text-shadow: 1px 1px 2px #000;">Click anywhere to block popups & start player</p>
+                    <p style="color: #fff; font-size: 13px; margin-top: 10px; text-shadow: 1px 1px 2px #000;">Click anywhere to start player</p>
                 </div>
                 <iframe id="videoIframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             </div>
@@ -346,19 +329,6 @@ html_content = f"""<!DOCTYPE html>
         function playCurrentMovie() {{
             if (!currentMovie) return;
             
-            let testAd = document.createElement('div');
-            testAd.innerHTML = '&nbsp;';
-            testAd.className = 'adsbygoogle';
-            testAd.style.display = 'block';
-            testAd.style.height = '1px';
-            document.body.appendChild(testAd);
-            let isBlocked = testAd.offsetHeight === 0;
-            testAd.remove();
-
-            if(!isBlocked) {{
-                document.getElementById('adblockModal').style.display = 'flex';
-            }}
-
             currentUrl1 = currentMovie.stream_url;
             currentUrl2 = currentMovie.alt_url;
             currentUrl3 = currentMovie.third_url;
@@ -379,7 +349,7 @@ html_content = f"""<!DOCTYPE html>
             document.getElementById(btnId).classList.add('active');
         }}
 
-    function closePlayer() {{
+        function closePlayer() {{
             document.getElementById('videoIframe').src = '';
             document.getElementById('playerModal').style.display = 'none';
         }}
@@ -393,4 +363,4 @@ html_content = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("Multi-audio servers configuration applied successfully!")
+print("Updated server links successfully!")
