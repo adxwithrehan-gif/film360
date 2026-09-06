@@ -77,6 +77,7 @@ def fetch_all_deep_data():
                         if imdb_id and tmdb_id not in existing_ids:
                             stream_url = f"https://vidsrc.to/embed/movie/{imdb_id}"
                             alt_url = f"https://vidsrc.icu/embed/movie/{imdb_id}"
+                            third_url = f"https://embed.su/embed/movie/{imdb_id}"
                             
                             newItem = {
                                 "id": tmdb_id,
@@ -87,6 +88,7 @@ def fetch_all_deep_data():
                                 "backdrop": backdrop,
                                 "stream_url": stream_url,
                                 "alt_url": alt_url,
+                                "third_url": third_url,
                                 "category": category,
                                 "type": "MOVIE"
                             }
@@ -106,7 +108,6 @@ def fetch_all_deep_data():
 existing_data = fetch_all_deep_data()
 movies_json = json.dumps(existing_data)
 
-# Lightning Fast JavaScript-Driven HTML Generation
 html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,7 +132,6 @@ html_content = f"""<!DOCTYPE html>
         .load-btn {{ background: #E50914; color: white; border: none; padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; }}
         .load-btn:hover {{ background: #b20710; }}
 
-        /* Netflix Style Modal */
         .modal {{ display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); overflow-y: auto; }}
         .modal-content {{ background: #181818; margin: 40px auto; width: 90%; max-width: 850px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }}
         .close {{ position: absolute; right: 15px; top: 15px; color: white; font-size: 30px; cursor: pointer; z-index: 10; background: rgba(0,0,0,0.5); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }}
@@ -156,13 +156,16 @@ html_content = f"""<!DOCTYPE html>
         .similar-card img {{ width: 100%; height: 180px; object-fit: cover; }}
         .similar-info {{ padding: 8px; font-size: 12px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
 
-        /* Video Player Modal */
         .player-modal {{ display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); }}
         .player-content {{ position: relative; margin: 3% auto; width: 90%; max-width: 900px; }}
-        .player-close {{ position: absolute; right: -15px; top: -35px; color: white; font-size: 35px; cursor: pointer; }}
+        .player-close {{ position: absolute; right: -15px; top: -35px; color: white; font-size: 35px; cursor: pointer; z-index: 10; }}
         .server-btns {{ margin-bottom: 10px; text-align: center; }}
         .server-btn {{ background: #333; color: white; border: none; padding: 8px 15px; margin: 0 5px; cursor: pointer; border-radius: 4px; font-weight: bold; }}
         .server-btn.active {{ background: #E50914; }}
+        
+        /* Anti-Ad Click Overlay Shield */
+        .player-wrapper {{ position: relative; width: 100%; padding-bottom: 56.25%; height: 0; }}
+        .click-shield {{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; background: transparent; cursor: pointer; }}
     </style>
 </head>
 <body>
@@ -187,7 +190,6 @@ html_content = f"""<!DOCTYPE html>
         <button class="load-btn" onclick="loadMore()">Load More</button>
     </div>
 
-    <!-- Netflix Style Details Modal -->
     <div id="detailsModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeDetails()">&times;</span>
@@ -211,15 +213,17 @@ html_content = f"""<!DOCTYPE html>
         </div>
     </div>
 
-    <!-- Video Player Modal -->
     <div id="playerModal" class="player-modal">
         <div class="player-content">
             <span class="player-close" onclick="closePlayer()">&times;</span>
             <div class="server-btns">
                 <button class="server-btn active" id="btn1" onclick="switchServer(currentUrl1, 'btn1')">Server 1</button>
-                <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2 (Multi-Audio)</button>
+                <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2</button>
+                <button class="server-btn" id="btn3" onclick="switchServer(currentUrl3, 'btn3')">Server 3</button>
             </div>
-            <div style="position:relative; padding-bottom:56.25%; height:0;">
+            <div class="player-wrapper">
+                <!-- Click Shield blocks initial unwanted window popups on first click -->
+                <div id="clickShield" class="click-shield" onclick="removeShield()"></div>
                 <iframe id="videoIframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-presentation" allowfullscreen></iframe>
             </div>
         </div>
@@ -230,6 +234,7 @@ html_content = f"""<!DOCTYPE html>
         let currentMovie = null;
         let currentUrl1 = '';
         let currentUrl2 = '';
+        let currentUrl3 = '';
         let itemsToShow = 36;
         let currentCategory = 'All';
 
@@ -310,11 +315,22 @@ html_content = f"""<!DOCTYPE html>
             if (!currentMovie) return;
             currentUrl1 = currentMovie.stream_url;
             currentUrl2 = currentMovie.alt_url;
+            currentUrl3 = currentMovie.third_url;
+            
+            // Reset click shield when opening new movie
+            document.getElementById('clickShield').style.display = 'block';
+            
             switchServer(currentUrl1, 'btn1');
             document.getElementById('playerModal').style.display = 'block';
         }}
 
+        function removeShield() {{
+            // Hides the shield so user can interact with the video player cleanly
+            document.getElementById('clickShield').style.display = 'none';
+        }}
+
         function switchServer(url, btnId) {{
+            document.getElementById('clickShield').style.display = 'block';
             document.getElementById('videoIframe').src = url;
             document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(btnId).classList.add('active');
@@ -334,4 +350,4 @@ html_content = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("Lightning-fast optimized index.html generated.")
+print("Full index.html generated successfully with anti-ad shield.")
