@@ -114,7 +114,7 @@ def fetch_all_deep_data():
 existing_data = fetch_all_deep_data()
 movies_json = json.dumps(existing_data)
 
-# HTML & Frontend Generation with Netflix-Style Details Modal
+# HTML & Frontend Generation with Sandbox Redirect Protection
 html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,7 +148,7 @@ html_content = f"""<!DOCTYPE html>
         .modal-banner {{ position: relative; width: 100%; height: 400px; background-size: cover; background-position: center; }}
         .modal-banner::after {{ content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to top, #181818, transparent); }}
         .modal-banner-content {{ position: absolute; bottom: 20px; left: 30px; z-index: 2; }}
-        .modal-title {{ font-size: 32px; font-weight: bold; margin-bottom: 10px; }}
+        .modal-title {{ font-size: 32px; font-weight: bold; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }}
         
         .play-btn {{ background: white; color: black; border: none; padding: 10px 25px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }}
         .play-btn:hover {{ background: rgba(255,255,255,0.75); }}
@@ -257,7 +257,7 @@ html_content += f"""
         </div>
     </div>
 
-    <!-- Video Player Modal -->
+    <!-- Video Player Modal with Sandbox Redirect Protection -->
     <div id="playerModal" class="player-modal">
         <div class="player-content">
             <span class="player-close" onclick="closePlayer()">&times;</span>
@@ -266,7 +266,7 @@ html_content += f"""
                 <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2 (Multi-Audio)</button>
             </div>
             <div style="position:relative; padding-bottom:56.25%; height:0;">
-                <iframe id="videoIframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allowfullscreen></iframe>
+                <iframe id="videoIframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-presentation" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -377,7 +377,6 @@ html_content += f"""
             document.getElementById('playerModal').style.display = 'none';
         }}
 
-        // Language tag selection effect inside modal
         document.querySelectorAll('.lang-tag').forEach(tag => {{
             tag.onclick = function() {{
                 document.querySelectorAll('.lang-tag').forEach(t => t.classList.remove('active'));
@@ -394,4 +393,4 @@ html_content += f"""
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("HTML and progress updated successfully with Netflix-style details modal.")
+print("Full index.html and app.py logic executed successfully with sandbox protection.")
