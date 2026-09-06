@@ -75,7 +75,6 @@ def fetch_all_deep_data():
                         imdb_id = ext_res.get("imdb_id")
                         
                         if imdb_id and tmdb_id not in existing_ids:
-                            # Best multi-audio and dubbed language servers
                             stream_url = f"https://embed.su/embed/movie/{imdb_id}"
                             alt_url = f"https://vidsrc.cc/v2/embed/movie/{imdb_id}"
                             third_url = f"https://vidsrc.io/embed/movie/{imdb_id}"
@@ -166,13 +165,15 @@ html_content = f"""<!DOCTYPE html>
         .server-btn.active {{ background: #E50914; }}
         
         .player-wrapper {{ position: relative; width: 100%; padding-bottom: 56.25%; height: 0; }}
+        
+        /* Improved Click Shield */
         .click-shield {{ 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; 
-            background: rgba(0,0,0,0.4); display: flex; flex-direction: column; 
+            background: rgba(0,0,0,0.6); display: flex; flex-direction: column; 
             align-items: center; justify-content: center; cursor: pointer; 
             text-align: center; transition: background 0.3s;
         }}
-        .click-shield:hover {{ background: rgba(0,0,0,0.2); }}
+        .click-shield:hover {{ background: rgba(0,0,0,0.4); }}
         .shield-btn {{
             background: #E50914; color: white; border: none; padding: 14px 28px;
             font-size: 18px; font-weight: bold; border-radius: 6px; cursor: pointer;
@@ -244,15 +245,14 @@ html_content = f"""<!DOCTYPE html>
             <span class="player-close" onclick="closePlayer()">&times;</span>
             <div class="server-btns">
                 <button class="server-btn active" id="btn1" onclick="switchServer(currentUrl1, 'btn1')">Server 1 (Multi-Audio)</button>
-                <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2 (Vidsrc v2)</button>
+                <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2</button>
                 <button class="server-btn" id="btn3" onclick="switchServer(currentUrl3, 'btn3')">Server 3</button>
             </div>
             <div class="player-wrapper">
                 <div id="clickShield" class="click-shield" onclick="removeShield()">
                     <button class="shield-btn">&#9658; Click to Watch Movie</button>
-                    <p style="color: #fff; font-size: 12px; margin-top: 10px; text-shadow: 1px 1px 2px #000;">Tap/Click anywhere to enable player</p>
+                    <p style="color: #fff; font-size: 13px; margin-top: 10px; text-shadow: 1px 1px 2px #000;">Click anywhere to block popups & start player</p>
                 </div>
-                <!-- Sandbox attribute completely removed to resolve 'Aw, Snap!' error and enable full multi-audio support -->
                 <iframe id="videoIframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             </div>
         </div>
@@ -360,16 +360,19 @@ html_content = f"""<!DOCTYPE html>
             currentUrl2 = currentMovie.alt_url;
             currentUrl3 = currentMovie.third_url;
             
+            // Show shield and load source
             document.getElementById('clickShield').style.display = 'flex';
             switchServer(currentUrl1, 'btn1');
             document.getElementById('playerModal').style.display = 'block';
         }}
 
         function removeShield() {{
+            // Hide shield safely on click to let user interact with player
             document.getElementById('clickShield').style.display = 'none';
         }}
 
         function switchServer(url, btnId) {{
+            // Show shield again when switching servers to block popup ads per server
             document.getElementById('clickShield').style.display = 'flex';
             document.getElementById('videoIframe').src = url;
             document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
@@ -390,4 +393,4 @@ html_content = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("Full code generated successfully with embed.su multi-audio support and sandbox fix!")
+print("Updated with fixed click-shield popup blocker!")
