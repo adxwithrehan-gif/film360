@@ -75,9 +75,10 @@ def fetch_all_deep_data():
                         imdb_id = ext_res.get("imdb_id")
                         
                         if imdb_id and tmdb_id not in existing_ids:
-                            stream_url = f"https://vidsrc.to/embed/movie/{imdb_id}"
-                            alt_url = f"https://vidsrc.icu/embed/movie/{imdb_id}"
-                            third_url = f"https://embed.su/embed/movie/{imdb_id}"
+                            # Best multi-audio and dubbed language servers
+                            stream_url = f"https://embed.su/embed/movie/{imdb_id}"
+                            alt_url = f"https://vidsrc.cc/v2/embed/movie/{imdb_id}"
+                            third_url = f"https://vidsrc.io/embed/movie/{imdb_id}"
                             
                             newItem = {
                                 "id": tmdb_id,
@@ -114,7 +115,6 @@ html_content = f"""<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Film360 - Streaming Portal</title>
-    <!-- Red 'F' Favicon using inline SVG -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E50914'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='70' font-family='Arial, sans-serif' font-weight='bold'>F</text></svg>">
     <style>
         body {{ background-color: #141414; color: white; font-family: Arial, sans-serif; margin: 0; padding: 20px; }}
@@ -179,7 +179,6 @@ html_content = f"""<!DOCTYPE html>
             box-shadow: 0 4px 15px rgba(229, 9, 20, 0.6); pointer-events: none;
         }}
 
-        /* AdBlocker Warning Modal (Only triggers when Play is pressed and Adblock is OFF) */
         #adblockModal {{ display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; }}
         .adblock-box {{ background: #181818; padding: 30px; border-radius: 8px; text-align: center; max-width: 400px; width: 90%; border: 1px solid #E50914; box-shadow: 0 10px 25px rgba(0,0,0,0.9); }}
         .adblock-box h3 {{ color: #E50914; margin-top: 0; font-size: 24px; }}
@@ -189,7 +188,6 @@ html_content = f"""<!DOCTYPE html>
 </head>
 <body>
 
-    <!-- AdBlocker Reminder Modal -->
     <div id="adblockModal">
         <div class="adblock-box">
             <h3>AdBlocker Recommended!</h3>
@@ -245,8 +243,8 @@ html_content = f"""<!DOCTYPE html>
         <div class="player-content">
             <span class="player-close" onclick="closePlayer()">&times;</span>
             <div class="server-btns">
-                <button class="server-btn active" id="btn1" onclick="switchServer(currentUrl1, 'btn1')">Server 1</button>
-                <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2</button>
+                <button class="server-btn active" id="btn1" onclick="switchServer(currentUrl1, 'btn1')">Server 1 (Multi-Audio)</button>
+                <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2 (Vidsrc v2)</button>
                 <button class="server-btn" id="btn3" onclick="switchServer(currentUrl3, 'btn3')">Server 3</button>
             </div>
             <div class="player-wrapper">
@@ -254,7 +252,8 @@ html_content = f"""<!DOCTYPE html>
                     <button class="shield-btn">&#9658; Click to Watch Movie</button>
                     <p style="color: #fff; font-size: 12px; margin-top: 10px; text-shadow: 1px 1px 2px #000;">Tap/Click anywhere to enable player</p>
                 </div>
-                <iframe id="videoIframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-presentation" allowfullscreen></iframe>
+                <!-- Sandbox attribute completely removed to resolve 'Aw, Snap!' error and enable full multi-audio support -->
+                <iframe id="videoIframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             </div>
         </div>
     </div>
@@ -341,11 +340,9 @@ html_content = f"""<!DOCTYPE html>
             document.getElementById('detailsModal').style.display = 'none';
         }}
 
-        // Check AdBlocker ONLY when user clicks Play
         function playCurrentMovie() {{
             if (!currentMovie) return;
             
-            // Test if adblocker is active
             let testAd = document.createElement('div');
             testAd.innerHTML = '&nbsp;';
             testAd.className = 'adsbygoogle';
@@ -355,7 +352,6 @@ html_content = f"""<!DOCTYPE html>
             let isBlocked = testAd.offsetHeight === 0;
             testAd.remove();
 
-            // Agar adblocker active nahi hai (matlab ads block nahi ho rahe)
             if(!isBlocked) {{
                 document.getElementById('adblockModal').style.display = 'flex';
             }}
@@ -394,4 +390,4 @@ html_content = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("Updated code generated! Adblocker popup will now trigger only when the Play button is pressed.")
+print("Full code generated successfully with embed.su multi-audio support and sandbox fix!")
