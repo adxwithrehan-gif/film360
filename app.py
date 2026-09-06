@@ -14,7 +14,7 @@ LANG_CATEGORIES = {
     "Lollywood": "ur"
 }
 
-PAGES_TO_FETCH_PER_RUN = 10 
+PAGES_TO_FETCH_PER_RUN = 50 
 
 def load_progress():
     if os.path.exists(TRACKER_FILE):
@@ -75,9 +75,13 @@ def fetch_all_deep_data():
                         imdb_id = ext_res.get("imdb_id")
                         
                         if imdb_id and tmdb_id not in existing_ids:
-                            stream_url = f"https://embed.su/embed/movie/{imdb_id}"
-                            alt_url = f"https://vidsrc.cc/v2/embed/movie/{imdb_id}"
-                            third_url = f"https://vidsrc.io/embed/movie/{imdb_id}"
+                            # MULTI-AUDIO SUPPORTED SERVERS CONFIGURATION
+                            # Server 1: Multiembed (Behtareen audio/language selector ke liye)
+                            stream_url = f"https://multiembed.mov/?video_id={imdb_id}&tmdb=1"
+                            # Server 2: Vidsrc.su (Multi-audio & dubbed tracks support)
+                            alt_url = f"https://vidsrc.su/embed/movie/{imdb_id}"
+                            # Server 3: Embed.su
+                            third_url = f"https://embed.su/embed/movie/{imdb_id}"
                             
                             newItem = {
                                 "id": tmdb_id,
@@ -113,7 +117,7 @@ html_content = f"""<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film360 - Streaming Portal</title>
+    <title>Film360 - Multi-Audio Streaming Portal</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E50914'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='70' font-family='Arial, sans-serif' font-weight='bold'>F</text></svg>">
     <style>
         body {{ background-color: #141414; color: white; font-family: Arial, sans-serif; margin: 0; padding: 20px; }}
@@ -166,7 +170,6 @@ html_content = f"""<!DOCTYPE html>
         
         .player-wrapper {{ position: relative; width: 100%; padding-bottom: 56.25%; height: 0; }}
         
-        /* Improved Click Shield */
         .click-shield {{ 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; 
             background: rgba(0,0,0,0.6); display: flex; flex-direction: column; 
@@ -244,9 +247,9 @@ html_content = f"""<!DOCTYPE html>
         <div class="player-content">
             <span class="player-close" onclick="closePlayer()">&times;</span>
             <div class="server-btns">
-                <button class="server-btn active" id="btn1" onclick="switchServer(currentUrl1, 'btn1')">Server 1 (Multi-Audio)</button>
-                <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2</button>
-                <button class="server-btn" id="btn3" onclick="switchServer(currentUrl3, 'btn3')">Server 3</button>
+                <button class="server-btn active" id="btn1" onclick="switchServer(currentUrl1, 'btn1')">Server 1 (Multi-Audio Selector)</button>
+                <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2 (Vidsrc.su)</button>
+                <button class="server-btn" id="btn3" onclick="switchServer(currentUrl3, 'btn3')">Server 3 (Embed.su)</button>
             </div>
             <div class="player-wrapper">
                 <div id="clickShield" class="click-shield" onclick="removeShield()">
@@ -360,26 +363,23 @@ html_content = f"""<!DOCTYPE html>
             currentUrl2 = currentMovie.alt_url;
             currentUrl3 = currentMovie.third_url;
             
-            // Show shield and load source
             document.getElementById('clickShield').style.display = 'flex';
             switchServer(currentUrl1, 'btn1');
             document.getElementById('playerModal').style.display = 'block';
         }}
 
         function removeShield() {{
-            // Hide shield safely on click to let user interact with player
             document.getElementById('clickShield').style.display = 'none';
         }}
 
         function switchServer(url, btnId) {{
-            // Show shield again when switching servers to block popup ads per server
             document.getElementById('clickShield').style.display = 'flex';
             document.getElementById('videoIframe').src = url;
             document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(btnId).classList.add('active');
         }}
 
-        function closePlayer() {{
+    function closePlayer() {{
             document.getElementById('videoIframe').src = '';
             document.getElementById('playerModal').style.display = 'none';
         }}
@@ -393,4 +393,4 @@ html_content = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("Updated with fixed click-shield popup blocker!")
+print("Multi-audio servers configuration applied successfully!")
