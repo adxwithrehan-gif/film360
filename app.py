@@ -75,9 +75,9 @@ def fetch_all_deep_data():
                         imdb_id = ext_res.get("imdb_id")
                         
                         if imdb_id and tmdb_id not in existing_ids:
-                            # 100% WORKING & ACTIVE MULTI-AUDIO / MULTI-SERVER CONFIG
+                            # ADVANCED MULTI-SERVER STREAMING LINKS (WITH MULTI-AUDIO SUPPORT)
                             stream_url = f"https://multiembed.mov/?video_id={imdb_id}&tmdb=1"
-                            alt_url = f"https://vidsrc.su/embed/movie/{imdb_id}"
+                            alt_url = f"https://vidsrc.me/embed/movie?imdb={imdb_id}"
                             third_url = f"https://embed.su/embed/movie/{imdb_id}"
                             
                             newItem = {
@@ -114,82 +114,95 @@ html_content = f"""<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film360 - Multi-Audio Streaming Portal</title>
+    <title>Film360 - Ultra Fast Multi-Audio Streaming Portal</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E50914'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='70' font-family='Arial, sans-serif' font-weight='bold'>F</text></svg>">
     <style>
-        body {{ background-color: #141414; color: white; font-family: Arial, sans-serif; margin: 0; padding: 20px; }}
-        .header {{ display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 15px; }}
-        h1 {{ color: #E50914; margin: 0; font-size: 30px; }}
-        .search-box {{ padding: 10px 15px; width: 280px; background: #222; border: 1px solid #444; color: white; border-radius: 4px; }}
-        .categories {{ display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }}
-        .cat-btn {{ background: #222; color: white; border: 1px solid #444; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-weight: bold; transition: 0.2s; }}
-        .cat-btn.active, .cat-btn:hover {{ background: #E50914; border-color: #E50914; }}
-        .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }}
-        .card {{ background: #222; border-radius: 6px; overflow: hidden; cursor: pointer; transition: transform 0.2s; }}
-        .card:hover {{ transform: scale(1.05); }}
-        .card img {{ width: 100%; height: 230px; object-fit: cover; }}
-        .card-info {{ padding: 10px; font-size: 13px; text-align: center; }}
-        .badge {{ background: #E50914; font-size: 9px; padding: 2px 5px; border-radius: 3px; font-weight: bold; }}
-        .load-more-container {{ text-align: center; margin: 30px 0; }}
-        .load-btn {{ background: #E50914; color: white; border: none; padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; }}
-        .load-btn:hover {{ background: #b20710; }}
-
-        .modal {{ display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); overflow-y: auto; }}
-        .modal-content {{ background: #181818; margin: 40px auto; width: 90%; max-width: 850px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }}
-        .close {{ position: absolute; right: 15px; top: 15px; color: white; font-size: 30px; cursor: pointer; z-index: 10; background: rgba(0,0,0,0.5); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }}
+        * {{ box-sizing: border-box; }}
+        body {{ background-color: #121212; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 15px; }}
         
-        .modal-banner {{ position: relative; width: 100%; height: 400px; background-size: cover; background-position: center; }}
-        .modal-banner::after {{ content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to top, #181818, transparent); }}
-        .modal-banner-content {{ position: absolute; bottom: 20px; left: 30px; z-index: 2; }}
-        .modal-title {{ font-size: 32px; font-weight: bold; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }}
-        
-        .play-btn {{ background: white; color: black; border: none; padding: 10px 25px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }}
-        .play-btn:hover {{ background: rgba(255,255,255,0.75); }}
+        .header {{ display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 20px; gap: 15px; }}
+        h1 {{ color: #E50914; margin: 0; font-size: 28px; letter-spacing: 1px; }}
+        .search-box {{ padding: 12px 18px; width: 300px; background: #1f1f1f; border: 1px solid #333; color: white; border-radius: 6px; font-size: 14px; outline: none; transition: border 0.2s; }}
+        .search-box:focus {{ border-color: #E50914; }}
 
-        .modal-body {{ padding: 30px; }}
-        .meta-row {{ display: flex; gap: 15px; align-items: center; font-size: 14px; margin-bottom: 15px; color: #46d369; font-weight: bold; }}
-        .overview {{ font-size: 15px; line-height: 1.6; color: #d2d2d2; margin-bottom: 25px; }}
+        .categories {{ display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 25px; overflow-x: auto; padding-bottom: 5px; }}
+        .cat-btn {{ background: #1f1f1f; color: #ccc; border: 1px solid #333; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.2s; }}
+        .cat-btn.active, .cat-btn:hover {{ background: #E50914; color: white; border-color: #E50914; }}
 
-        .similar-section {{ margin-top: 30px; }}
-        .similar-title {{ font-size: 20px; font-weight: bold; margin-bottom: 15px; }}
-        .similar-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }}
-        .similar-card {{ background: #222; border-radius: 4px; overflow: hidden; cursor: pointer; transition: 0.2s; }}
-        .similar-card:hover {{ transform: scale(1.05); }}
-        .similar-card img {{ width: 100%; height: 180px; object-fit: cover; }}
-        .similar-info {{ padding: 8px; font-size: 12px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+        .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }}
+        .card {{ background: #1f1f1f; border-radius: 8px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; position: relative; }}
+        .card:hover {{ transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.6); }}
+        .card img {{ width: 100%; height: 220px; object-fit: cover; display: block; background: #2a2a2a; }}
+        .card-info {{ padding: 10px; font-size: 12px; }}
+        .badge {{ background: #E50914; font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase; }}
+        .card-title {{ margin-top: 6px; display: block; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #f1f1f1; }}
 
-        .player-modal {{ display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); }}
-        .player-content {{ position: relative; margin: 3% auto; width: 90%; max-width: 900px; }}
-        .player-close {{ position: absolute; right: -15px; top: -35px; color: white; font-size: 35px; cursor: pointer; z-index: 10; }}
-        .server-btns {{ margin-bottom: 10px; text-align: center; }}
-        .server-btn {{ background: #333; color: white; border: none; padding: 8px 15px; margin: 0 5px; cursor: pointer; border-radius: 4px; font-weight: bold; }}
-        .server-btn.active {{ background: #E50914; }}
+        .load-more-container {{ text-align: center; margin: 40px 0; }}
+        .load-btn {{ background: #1f1f1f; color: white; border: 1px solid #444; padding: 12px 35px; font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: 0.2s; }}
+        .load-btn:hover {{ background: #E50914; border-color: #E50914; }}
+
+        /* Modal Styles */
+        .modal {{ display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); overflow-y: auto; backdrop-filter: blur(5px); }}
+        .modal-content {{ background: #181818; margin: 30px auto; width: 92%; max-width: 850px; border-radius: 10px; overflow: hidden; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.9); }}
+        .close {{ position: absolute; right: 15px; top: 15px; color: white; font-size: 24px; cursor: pointer; z-index: 10; background: rgba(0,0,0,0.6); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.2s; }}
+        .close:hover {{ background: #E50914; }}
         
-        .player-wrapper {{ position: relative; width: 100%; padding-bottom: 56.25%; height: 0; }}
+        .modal-banner {{ position: relative; width: 100%; height: 380px; background-size: cover; background-position: center; }}
+        .modal-banner::after {{ content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 160px; background: linear-gradient(to top, #181818, transparent); }}
+        .modal-banner-content {{ position: absolute; bottom: 20px; left: 25px; z-index: 2; }}
+        .modal-title {{ font-size: 28px; font-weight: bold; margin-bottom: 12px; text-shadow: 2px 2px 6px rgba(0,0,0,0.9); }}
         
+        .play-btn {{ background: #E50914; color: white; border: none; padding: 10px 24px; font-size: 15px; font-weight: bold; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }}
+        .play-btn:hover {{ background: #b20710; }}
+
+        .modal-body {{ padding: 25px; }}
+        .meta-row {{ display: flex; gap: 15px; align-items: center; font-size: 13px; margin-bottom: 15px; color: #46d369; font-weight: bold; }}
+        .overview {{ font-size: 14px; line-height: 1.6; color: #c0c0c0; margin-bottom: 25px; }}
+
+        .similar-section {{ margin-top: 25px; border-top: 1px solid #2a2a2a; padding-top: 20px; }}
+        .similar-title {{ font-size: 18px; font-weight: bold; margin-bottom: 15px; }}
+        .similar-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }}
+        .similar-card {{ background: #222; border-radius: 6px; overflow: hidden; cursor: pointer; transition: 0.2s; }}
+        .similar-card:hover {{ transform: scale(1.04); }}
+        .similar-card img {{ width: 100%; height: 160px; object-fit: cover; }}
+        .similar-info {{ padding: 6px; font-size: 11px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+
+        /* Player Modal with Pop-up Shield & Multi-Server */
+        .player-modal {{ display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(8px); }}
+        .player-content {{ position: relative; margin: 2% auto; width: 94%; max-width: 950px; }}
+        .player-close {{ position: absolute; right: -10px; top: -35px; color: white; font-size: 32px; cursor: pointer; z-index: 10; }}
+        
+        .server-btns {{ margin-bottom: 12px; text-align: center; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }}
+        .server-btn {{ background: #1f1f1f; color: #ccc; border: 1px solid #333; padding: 8px 16px; cursor: pointer; border-radius: 5px; font-weight: bold; font-size: 13px; transition: 0.2s; }}
+        .server-btn.active {{ background: #E50914; color: white; border-color: #E50914; }}
+        
+        .player-wrapper {{ position: relative; width: 100%; padding-bottom: 56.25%; height: 0; background: #000; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }}
+        
+        /* Popup Blocker Shield */
         .click-shield {{ 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; 
-            background: rgba(0,0,0,0.6); display: flex; flex-direction: column; 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; 
+            background: rgba(0, 0, 0, 0.75); display: flex; flex-direction: column; 
             align-items: center; justify-content: center; cursor: pointer; 
-            text-align: center; transition: background 0.3s;
+            text-align: center; transition: background 0.3s; padding: 20px;
         }}
-        .click-shield:hover {{ background: rgba(0,0,0,0.4); }}
+        .click-shield:hover {{ background: rgba(0, 0, 0, 0.55); }}
         .shield-btn {{
-            background: #E50914; color: white; border: none; padding: 14px 28px;
-            font-size: 18px; font-weight: bold; border-radius: 6px; cursor: pointer;
-            box-shadow: 0 4px 15px rgba(229, 9, 20, 0.6); pointer-events: none;
+            background: #E50914; color: white; border: none; padding: 14px 30px;
+            font-size: 17px; font-weight: bold; border-radius: 6px; cursor: pointer;
+            box-shadow: 0 4px 20px rgba(229, 9, 20, 0.7); pointer-events: none;
         }}
+        .shield-note {{ color: #ddd; font-size: 13px; margin-top: 12px; text-shadow: 1px 1px 2px #000; max-width: 400px; line-height: 1.4; }}
     </style>
 </head>
 <body>
 
     <div class="header">
         <h1>FILM360</h1>
-        <input type="text" id="searchInput" class="search-box" placeholder="Search movies..." onkeyup="filterContent()">
+        <input type="text" id="searchInput" class="search-box" placeholder="Search movies by title..." onkeyup="filterContent()">
     </div>
 
     <div class="categories">
-        <button class="cat-btn active" onclick="setCategory('All', this)">All (Latest on Top)</button>
+        <button class="cat-btn active" onclick="setCategory('All', this)">All (Latest)</button>
         <button class="cat-btn" onclick="setCategory('Hollywood', this)">Hollywood</button>
         <button class="cat-btn" onclick="setCategory('Bollywood', this)">Bollywood</button>
         <button class="cat-btn" onclick="setCategory('Tollywood', this)">Tollywood</button>
@@ -200,46 +213,48 @@ html_content = f"""<!DOCTYPE html>
     <div class="grid" id="movieGrid"></div>
 
     <div class="load-more-container" id="loadMoreContainer">
-        <button class="load-btn" onclick="loadMore()">Load More</button>
+        <button class="load-btn" onclick="loadMore()">Load More Movies</button>
     </div>
 
+    <!-- Movie Details Modal -->
     <div id="detailsModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeDetails()">&times;</span>
             <div id="modalBanner" class="modal-banner">
                 <div class="modal-banner-content">
                     <div id="modalTitle" class="modal-title"></div>
-                    <button class="play-btn" onclick="playCurrentMovie()">&#9658; Play</button>
+                    <button class="play-btn" onclick="playCurrentMovie()">&#9658; Watch Now</button>
                 </div>
             </div>
             <div class="modal-body">
                 <div class="meta-row">
                     <span id="modalYear"></span>
-                    <span class="badge" id="modalCategoryBadge" style="font-size: 11px;"></span>
+                    <span class="badge" id="modalCategoryBadge"></span>
                 </div>
                 <div class="overview" id="modalOverview"></div>
                 <div class="similar-section">
-                    <div class="similar-title">More Like This</div>
+                    <div class="similar-title">Similar Movies</div>
                     <div class="similar-grid" id="similarGrid"></div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Video Player Modal -->
     <div id="playerModal" class="player-modal">
         <div class="player-content">
             <span class="player-close" onclick="closePlayer()">&times;</span>
             <div class="server-btns">
                 <button class="server-btn active" id="btn1" onclick="switchServer(currentUrl1, 'btn1')">Server 1 (MultiEmbed)</button>
-                <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2 (Vidsrc.su)</button>
+                <button class="server-btn" id="btn2" onclick="switchServer(currentUrl2, 'btn2')">Server 2 (Vidsrc ME)</button>
                 <button class="server-btn" id="btn3" onclick="switchServer(currentUrl3, 'btn3')">Server 3 (Embed.su)</button>
             </div>
             <div class="player-wrapper">
                 <div id="clickShield" class="click-shield" onclick="removeShield()">
-                    <button class="shield-btn">&#9658; Click to Watch Movie</button>
-                    <p style="color: #fff; font-size: 13px; margin-top: 10px; text-shadow: 1px 1px 2px #000;">Click anywhere to start player</p>
+                    <button class="shield-btn">&#9658; Click to Start Movie</button>
+                    <div class="shield-note">Protects you from unwanted popups and activates secure multi-audio streaming.</div>
                 </div>
-                <iframe id="videoIframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                <iframe id="videoIframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             </div>
         </div>
     </div>
@@ -269,8 +284,8 @@ html_content = f"""<!DOCTYPE html>
                 <div class="card" onclick='openDetails({{JSON.stringify(m).replace(/'/g, "&#39;")}})'>
                     <img src="${{m.poster}}" alt="${{m.title}}" loading="lazy">
                     <div class="card-info">
-                        <span class="badge">${{m.category}}</span><br>
-                        <strong style="margin-top:5px; display:block;">${{m.title}}</strong>
+                        <span class="badge">${{m.category}}</span>
+                        <span class="card-title" title="${{m.title}}">${{m.title}}</span>
                     </div>
                 </div>
             `).join('');
@@ -304,7 +319,7 @@ html_content = f"""<!DOCTYPE html>
         function openDetails(movie) {{
             currentMovie = movie;
             document.getElementById('modalBanner').style.backgroundImage = `url('${{movie.backdrop}}')`;
-            document.getElementById('modalTitle').innerText = movie.title;
+            document.getElementById('modalTitleជន' || 'modalTitle').innerText = movie.title;
             document.getElementById('modalYear').innerText = movie.year;
             document.getElementById('modalCategoryBadge').innerText = movie.category;
             document.getElementById('modalOverview').innerText = movie.overview;
@@ -354,6 +369,7 @@ html_content = f"""<!DOCTYPE html>
             document.getElementById('playerModal').style.display = 'none';
         }}
 
+        // Initial render
         renderGrid();
     </script>
 </body>
@@ -363,4 +379,4 @@ html_content = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("Updated server links successfully!")
+print("Advanced script generated successfully with multi-servers & shield!")
