@@ -14,7 +14,7 @@ LANG_CATEGORIES = {
     "Lollywood": "ur"
 }
 
-PAGES_TO_FETCH_PER_RUN = 50 
+PAGES_TO_FETCH_PER_RUN = 10 
 
 def load_progress():
     if os.path.exists(TRACKER_FILE):
@@ -40,7 +40,7 @@ def fetch_all_deep_data():
     for category, lang in LANG_CATEGORIES.items():
         start_page = category_pages.get(category, 1)
         end_page = start_page + PAGES_TO_FETCH_PER_RUN
-        print(f"\n--- Fetching {category} (2020-2026) from Page {start_page} to {end_page - 1} ---")
+        print(f"\n--- Fetching {category} from Page {start_page} to {end_page - 1} ---")
         
         for page in range(start_page, end_page):
             url = f"https://api.themoviedb.org/3/discover/movie?api_key={TMDB_API_KEY}&with_original_language={lang}&primary_release_date.gte=2020-01-01&primary_release_date.lte=2026-12-31&sort_by=popularity.desc&page={page}"
@@ -48,7 +48,6 @@ def fetch_all_deep_data():
             try:
                 response = requests.get(url)
                 if response.status_code == 429:
-                    print("Rate limit hit! Waiting 5 seconds...")
                     time.sleep(5)
                     continue
                     
@@ -56,7 +55,6 @@ def fetch_all_deep_data():
                     res = response.json()
                     results = res.get("results", [])
                     if not results:
-                        print(f"No more pages for {category}.")
                         break
                         
                     for item in results:
@@ -71,7 +69,7 @@ def fetch_all_deep_data():
                         backdrop = f"https://image.tmdb.org/t/p/original{backdrop_path}" if backdrop_path else poster
                         tmdb_id = item.get("id")
                         
-                        time.sleep(0.1)
+                        time.sleep(0.05)
                         ext_url = f"https://api.themoviedb.org/3/movie/{tmdb_id}/external_ids?api_key={TMDB_API_KEY}"
                         ext_res = requests.get(ext_url).json()
                         imdb_id = ext_res.get("imdb_id")
@@ -95,26 +93,20 @@ def fetch_all_deep_data():
                             brand_new_items.append(newItem)
                             existing_ids.add(tmdb_id)
                             
-                print(f"Fetched {category} Page {page} successfully.")
                 category_pages[category] = page + 1
-                time.sleep(0.15)
             except Exception as e:
-                print(f"Error fetching {category} page {page}: {e}")
-                time.sleep(2)
+                print(f"Error: {e}")
                 
     updated_data = brand_new_items + existing_data
-    
     progress["category_pages"] = category_pages
     progress["data"] = updated_data
     save_progress(progress)
-    
-    print(f"\nAdded {len(brand_new_items)} new movies. Total library size: {len(updated_data)}")
     return updated_data
 
 existing_data = fetch_all_deep_data()
 movies_json = json.dumps(existing_data)
 
-# HTML & Frontend Generation with Sandbox Redirect Protection
+# Lightning Fast JavaScript-Driven HTML Generation
 html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,8 +122,7 @@ html_content = f"""<!DOCTYPE html>
         .cat-btn {{ background: #222; color: white; border: 1px solid #444; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-weight: bold; transition: 0.2s; }}
         .cat-btn.active, .cat-btn:hover {{ background: #E50914; border-color: #E50914; }}
         .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }}
-        .card {{ background: #222; border-radius: 6px; overflow: hidden; cursor: pointer; transition: transform 0.2s; display: none; }}
-        .card.visible {{ display: block; }}
+        .card {{ background: #222; border-radius: 6px; overflow: hidden; cursor: pointer; transition: transform 0.2s; }}
         .card:hover {{ transform: scale(1.05); }}
         .card img {{ width: 100%; height: 230px; object-fit: cover; }}
         .card-info {{ padding: 10px; font-size: 13px; text-align: center; }}
@@ -157,14 +148,6 @@ html_content = f"""<!DOCTYPE html>
         .meta-row {{ display: flex; gap: 15px; align-items: center; font-size: 14px; margin-bottom: 15px; color: #46d369; font-weight: bold; }}
         .overview {{ font-size: 15px; line-height: 1.6; color: #d2d2d2; margin-bottom: 25px; }}
 
-        /* Language Tags */
-        .lang-section {{ margin-bottom: 25px; }}
-        .lang-title {{ font-size: 14px; color: #aaa; margin-bottom: 8px; }}
-        .lang-tags {{ display: flex; gap: 8px; flex-wrap: wrap; }}
-        .lang-tag {{ background: #333; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; border: 1px solid #444; }}
-        .lang-tag.active, .lang-tag:hover {{ background: #E50914; border-color: #E50914; color: white; }}
-
-        /* More Like This Grid */
         .similar-section {{ margin-top: 30px; }}
         .similar-title {{ font-size: 20px; font-weight: bold; margin-bottom: 15px; }}
         .similar-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }}
@@ -198,22 +181,7 @@ html_content = f"""<!DOCTYPE html>
         <button class="cat-btn" onclick="setCategory('Lollywood', this)">Lollywood</button>
     </div>
 
-    <div class="grid" id="movieGrid">
-"""
-
-for item in existing_data:
-    html_content += f"""
-        <div class="card" data-title="{item['title'].lower()}" data-category="{item['category']}" onclick='openDetails({json.dumps(item)})'>
-            <img src="{item['poster']}" alt="{item['title']}">
-            <div class="card-info">
-                <span class="badge">{item['category']}</span><br>
-                <strong style="margin-top:5px; display:block;">{item['title']}</strong>
-            </div>
-        </div>
-    """
-
-html_content += f"""
-    </div>
+    <div class="grid" id="movieGrid"></div>
 
     <div class="load-more-container" id="loadMoreContainer">
         <button class="load-btn" onclick="loadMore()">Load More</button>
@@ -235,20 +203,6 @@ html_content += f"""
                     <span class="badge" id="modalCategoryBadge" style="font-size: 11px;"></span>
                 </div>
                 <div class="overview" id="modalOverview"></div>
-
-                <div class="lang-section">
-                    <div class="lang-title">Available Audio / Subtitles:</div>
-                    <div class="lang-tags">
-                        <span class="lang-tag active">English</span>
-                        <span class="lang-tag">Hindi / Urdu</span>
-                        <span class="lang-tag">Tamil</span>
-                        <span class="lang-tag">Telugu</span>
-                        <span class="lang-tag">Spanish</span>
-                        <span class="lang-tag">German</span>
-                        <span class="lang-tag">French</span>
-                    </div>
-                </div>
-
                 <div class="similar-section">
                     <div class="similar-title">More Like This</div>
                     <div class="similar-grid" id="similarGrid"></div>
@@ -257,7 +211,7 @@ html_content += f"""
         </div>
     </div>
 
-    <!-- Video Player Modal with Sandbox Redirect Protection -->
+    <!-- Video Player Modal -->
     <div id="playerModal" class="player-modal">
         <div class="player-content">
             <span class="player-close" onclick="closePlayer()">&times;</span>
@@ -280,32 +234,29 @@ html_content += f"""
         let currentCategory = 'All';
 
         function renderGrid() {{
-            let cards = document.getElementsByClassName('card');
-            let searchInput = document.getElementById('searchInput').value.toLowerCase();
-            let totalMatching = 0;
+            const grid = document.getElementById('movieGrid');
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            
+            let filtered = allMovies.filter(m => {{
+                let matchesCategory = (currentCategory === 'All' || m.category === currentCategory);
+                let matchesSearch = m.title.toLowerCase().includes(searchInput);
+                return matchesCategory && matchesSearch;
+            }});
 
-            for (let i = 0; i < cards.length; i++) {{
-                let card = cards[i];
-                let title = card.getAttribute('data-title');
-                let category = card.getAttribute('data-category');
-
-                let matchesCategory = (currentCategory === 'All' || category === currentCategory);
-                let matchesSearch = title.includes(searchInput);
-
-                if (matchesCategory && matchesSearch) {{
-                    totalMatching++;
-                    if (totalMatching <= itemsToShow) {{
-                        card.classList.add('visible');
-                    }} else {{
-                        card.classList.remove('visible');
-                    }}
-                }} else {{
-                    card.classList.remove('visible');
-                }}
-            }}
+            let paginated = filtered.slice(0, itemsToShow);
+            
+            grid.innerHTML = paginated.map(m => `
+                <div class="card" onclick='openDetails({{JSON.stringify(m).replace(/'/g, "&#39;")}})'>
+                    <img src="${{m.poster}}" alt="${{m.title}}" loading="lazy">
+                    <div class="card-info">
+                        <span class="badge">${{m.category}}</span><br>
+                        <strong style="margin-top:5px; display:block;">${{m.title}}</strong>
+                    </div>
+                </div>
+            `).join('');
 
             let loadBtn = document.getElementById('loadMoreContainer');
-            if (totalMatching > itemsToShow && searchInput === '') {{
+            if (filtered.length > itemsToShow && searchInput === '') {{
                 loadBtn.style.display = 'block';
             }} else {{
                 loadBtn.style.display = 'none';
@@ -338,18 +289,15 @@ html_content += f"""
             document.getElementById('modalCategoryBadge').innerText = movie.category;
             document.getElementById('modalOverview').innerText = movie.overview;
 
-            // Load "More Like This" (Same category movies)
             let similarContainer = document.getElementById('similarGrid');
-            similarContainer.innerHTML = '';
-            
             let filteredSimilar = allMovies.filter(m => m.category === movie.category && m.id !== movie.id).slice(0, 6);
-            filteredSimilar.forEach(sim => {{
-                let div = document.createElement('div');
-                div.className = 'similar-card';
-                div.innerHTML = `<img src="${{sim.poster}}" alt="${{sim.title}}"><div class="similar-info">${{sim.title}}</div>`;
-                div.onclick = () => openDetails(sim);
-                similarContainer.appendChild(div);
-            }});
+            
+            similarContainer.innerHTML = filteredSimilar.map(sim => `
+                <div class="similar-card" onclick='openDetails({{JSON.stringify(sim).replace(/'/g, "&#39;")}})'>
+                    <img src="${{sim.poster}}" alt="${{sim.title}}" loading="lazy">
+                    <div class="similar-info">${{sim.title}}</div>
+                </div>
+            `).join('');
 
             document.getElementById('detailsModal').style.display = 'block';
         }}
@@ -377,13 +325,6 @@ html_content += f"""
             document.getElementById('playerModal').style.display = 'none';
         }}
 
-        document.querySelectorAll('.lang-tag').forEach(tag => {{
-            tag.onclick = function() {{
-                document.querySelectorAll('.lang-tag').forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-            }}
-        }});
-
         renderGrid();
     </script>
 </body>
@@ -393,4 +334,4 @@ html_content += f"""
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("Full index.html and app.py logic executed successfully with sandbox protection.")
+print("Lightning-fast optimized index.html generated.")
