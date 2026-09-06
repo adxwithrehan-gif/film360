@@ -165,7 +165,6 @@ html_content = f"""<!DOCTYPE html>
         .server-btn {{ background: #333; color: white; border: none; padding: 8px 15px; margin: 0 5px; cursor: pointer; border-radius: 4px; font-weight: bold; }}
         .server-btn.active {{ background: #E50914; }}
         
-        /* Stronger Anti-Ad / Click Shield for Mobile and PC */
         .player-wrapper {{ position: relative; width: 100%; padding-bottom: 56.25%; height: 0; }}
         .click-shield {{ 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; 
@@ -180,7 +179,7 @@ html_content = f"""<!DOCTYPE html>
             box-shadow: 0 4px 15px rgba(229, 9, 20, 0.6); pointer-events: none;
         }}
 
-        /* AdBlocker Popup Notification */
+        /* AdBlocker Warning Modal (Only triggers when Play is pressed and Adblock is OFF) */
         #adblockModal {{ display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; }}
         .adblock-box {{ background: #181818; padding: 30px; border-radius: 8px; text-align: center; max-width: 400px; width: 90%; border: 1px solid #E50914; box-shadow: 0 10px 25px rgba(0,0,0,0.9); }}
         .adblock-box h3 {{ color: #E50914; margin-top: 0; font-size: 24px; }}
@@ -190,12 +189,12 @@ html_content = f"""<!DOCTYPE html>
 </head>
 <body>
 
-    <!-- AdBlocker Warning Modal -->
+    <!-- AdBlocker Reminder Modal -->
     <div id="adblockModal">
         <div class="adblock-box">
-            <h3>AdBlocker Detected!</h3>
-            <p>Please disable your AdBlocker or whitelist our site to enjoy smooth streaming without interruptions.</p>
-            <button class="adblock-btn" onclick="location.reload()">I Have Disabled It</button>
+            <h3>AdBlocker Recommended!</h3>
+            <p>Movie play karne se pehle apna <b>AdBlocker ON</b> kar lein taake player ke andar aane wale unwanted ads aur popups block ho sakein.</p>
+            <button class="adblock-btn" onclick="document.getElementById('adblockModal').style.display='none'">I Have Turned It On</button>
         </div>
     </div>
 
@@ -251,7 +250,6 @@ html_content = f"""<!DOCTYPE html>
                 <button class="server-btn" id="btn3" onclick="switchServer(currentUrl3, 'btn3')">Server 3</button>
             </div>
             <div class="player-wrapper">
-                <!-- Stronger Click Shield for Mobile and PC to block popup redirects -->
                 <div id="clickShield" class="click-shield" onclick="removeShield()">
                     <button class="shield-btn">&#9658; Click to Watch Movie</button>
                     <p style="color: #fff; font-size: 12px; margin-top: 10px; text-shadow: 1px 1px 2px #000;">Tap/Click anywhere to enable player</p>
@@ -269,24 +267,6 @@ html_content = f"""<!DOCTYPE html>
         let currentUrl3 = '';
         let itemsToShow = 36;
         let currentCategory = 'All';
-
-        // AdBlocker Detection Script
-        window.addEventListener('load', function() {{
-            setTimeout(function() {{
-                let testAd = document.createElement('div');
-                testAd.innerHTML = '&nbsp;';
-                testAd.className = 'adsbygoogle';
-                testAd.style.display = 'block';
-                testAd.style.height = '1px';
-                document.body.appendChild(testAd);
-                let isBlocked = testAd.offsetHeight === 0;
-                testAd.remove();
-                
-                if(isBlocked) {{
-                    document.getElementById('adblockModal').style.display = 'flex';
-                }}
-            }}, 1200);
-        }});
 
         function renderGrid() {{
             const grid = document.getElementById('movieGrid');
@@ -361,8 +341,25 @@ html_content = f"""<!DOCTYPE html>
             document.getElementById('detailsModal').style.display = 'none';
         }}
 
+        // Check AdBlocker ONLY when user clicks Play
         function playCurrentMovie() {{
             if (!currentMovie) return;
+            
+            // Test if adblocker is active
+            let testAd = document.createElement('div');
+            testAd.innerHTML = '&nbsp;';
+            testAd.className = 'adsbygoogle';
+            testAd.style.display = 'block';
+            testAd.style.height = '1px';
+            document.body.appendChild(testAd);
+            let isBlocked = testAd.offsetHeight === 0;
+            testAd.remove();
+
+            // Agar adblocker active nahi hai (matlab ads block nahi ho rahe)
+            if(!isBlocked) {{
+                document.getElementById('adblockModal').style.display = 'flex';
+            }}
+
             currentUrl1 = currentMovie.stream_url;
             currentUrl2 = currentMovie.alt_url;
             currentUrl3 = currentMovie.third_url;
@@ -397,4 +394,4 @@ html_content = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("Full index.html generated successfully with red 'F' favicon, adblocker detection, and stronger mobile/PC click shield.")
+print("Updated code generated! Adblocker popup will now trigger only when the Play button is pressed.")
