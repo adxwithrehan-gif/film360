@@ -95,7 +95,7 @@ def fetch_all_deep_data():
                             brand_new_items.append(newItem)
                             existing_ids.add(tmdb_id)
                             
-                category_pages[category] = page + 1
+                    category_pages[category] = page + 1
             except Exception as e:
                 print(f"Error: {e}")
                 
@@ -114,6 +114,8 @@ html_content = f"""<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Film360 - Streaming Portal</title>
+    <!-- Red 'F' Favicon using inline SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E50914'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='70' font-family='Arial, sans-serif' font-weight='bold'>F</text></svg>">
     <style>
         body {{ background-color: #141414; color: white; font-family: Arial, sans-serif; margin: 0; padding: 20px; }}
         .header {{ display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 15px; }}
@@ -163,12 +165,39 @@ html_content = f"""<!DOCTYPE html>
         .server-btn {{ background: #333; color: white; border: none; padding: 8px 15px; margin: 0 5px; cursor: pointer; border-radius: 4px; font-weight: bold; }}
         .server-btn.active {{ background: #E50914; }}
         
-        /* Anti-Ad Click Overlay Shield */
+        /* Stronger Anti-Ad / Click Shield for Mobile and PC */
         .player-wrapper {{ position: relative; width: 100%; padding-bottom: 56.25%; height: 0; }}
-        .click-shield {{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; background: transparent; cursor: pointer; }}
+        .click-shield {{ 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; 
+            background: rgba(0,0,0,0.4); display: flex; flex-direction: column; 
+            align-items: center; justify-content: center; cursor: pointer; 
+            text-align: center; transition: background 0.3s;
+        }}
+        .click-shield:hover {{ background: rgba(0,0,0,0.2); }}
+        .shield-btn {{
+            background: #E50914; color: white; border: none; padding: 14px 28px;
+            font-size: 18px; font-weight: bold; border-radius: 6px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(229, 9, 20, 0.6); pointer-events: none;
+        }}
+
+        /* AdBlocker Popup Notification */
+        #adblockModal {{ display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; }}
+        .adblock-box {{ background: #181818; padding: 30px; border-radius: 8px; text-align: center; max-width: 400px; width: 90%; border: 1px solid #E50914; box-shadow: 0 10px 25px rgba(0,0,0,0.9); }}
+        .adblock-box h3 {{ color: #E50914; margin-top: 0; font-size: 24px; }}
+        .adblock-box p {{ color: #ccc; font-size: 14px; line-height: 1.5; margin-bottom: 20px; }}
+        .adblock-btn {{ background: #E50914; color: white; border: none; padding: 10px 20px; font-weight: bold; border-radius: 4px; cursor: pointer; width: 100%; }}
     </style>
 </head>
 <body>
+
+    <!-- AdBlocker Warning Modal -->
+    <div id="adblockModal">
+        <div class="adblock-box">
+            <h3>AdBlocker Detected!</h3>
+            <p>Please disable your AdBlocker or whitelist our site to enjoy smooth streaming without interruptions.</p>
+            <button class="adblock-btn" onclick="location.reload()">I Have Disabled It</button>
+        </div>
+    </div>
 
     <div class="header">
         <h1>FILM360</h1>
@@ -222,8 +251,11 @@ html_content = f"""<!DOCTYPE html>
                 <button class="server-btn" id="btn3" onclick="switchServer(currentUrl3, 'btn3')">Server 3</button>
             </div>
             <div class="player-wrapper">
-                <!-- Click Shield blocks initial unwanted window popups on first click -->
-                <div id="clickShield" class="click-shield" onclick="removeShield()"></div>
+                <!-- Stronger Click Shield for Mobile and PC to block popup redirects -->
+                <div id="clickShield" class="click-shield" onclick="removeShield()">
+                    <button class="shield-btn">&#9658; Click to Watch Movie</button>
+                    <p style="color: #fff; font-size: 12px; margin-top: 10px; text-shadow: 1px 1px 2px #000;">Tap/Click anywhere to enable player</p>
+                </div>
                 <iframe id="videoIframe" src="" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-presentation" allowfullscreen></iframe>
             </div>
         </div>
@@ -237,6 +269,24 @@ html_content = f"""<!DOCTYPE html>
         let currentUrl3 = '';
         let itemsToShow = 36;
         let currentCategory = 'All';
+
+        // AdBlocker Detection Script
+        window.addEventListener('load', function() {{
+            setTimeout(function() {{
+                let testAd = document.createElement('div');
+                testAd.innerHTML = '&nbsp;';
+                testAd.className = 'adsbygoogle';
+                testAd.style.display = 'block';
+                testAd.style.height = '1px';
+                document.body.appendChild(testAd);
+                let isBlocked = testAd.offsetHeight === 0;
+                testAd.remove();
+                
+                if(isBlocked) {{
+                    document.getElementById('adblockModal').style.display = 'flex';
+                }}
+            }}, 1200);
+        }});
 
         function renderGrid() {{
             const grid = document.getElementById('movieGrid');
@@ -317,20 +367,17 @@ html_content = f"""<!DOCTYPE html>
             currentUrl2 = currentMovie.alt_url;
             currentUrl3 = currentMovie.third_url;
             
-            // Reset click shield when opening new movie
-            document.getElementById('clickShield').style.display = 'block';
-            
+            document.getElementById('clickShield').style.display = 'flex';
             switchServer(currentUrl1, 'btn1');
             document.getElementById('playerModal').style.display = 'block';
         }}
 
         function removeShield() {{
-            // Hides the shield so user can interact with the video player cleanly
             document.getElementById('clickShield').style.display = 'none';
         }}
 
         function switchServer(url, btnId) {{
-            document.getElementById('clickShield').style.display = 'block';
+            document.getElementById('clickShield').style.display = 'flex';
             document.getElementById('videoIframe').src = url;
             document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(btnId).classList.add('active');
@@ -350,4 +397,4 @@ html_content = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("Full index.html generated successfully with anti-ad shield.")
+print("Full index.html generated successfully with red 'F' favicon, adblocker detection, and stronger mobile/PC click shield.")
